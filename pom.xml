@@ -4,7 +4,7 @@
 
     <groupId>cn.yusiwen</groupId>
     <artifactId>java-base-parent</artifactId>
-    <version>1</version>
+    <version>2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>java-base-parent</name>
@@ -22,7 +22,7 @@
         <connection>scm:git:ssh://git@github.com/yusiwen/java-base-parent.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/yusiwen/java-base-parent.git</developerConnection>
         <url>https://github.com/yusiwen/java-base-parent</url>
-        <tag>v1</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <developers>
