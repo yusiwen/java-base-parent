@@ -56,7 +56,7 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version> <!-- 编译插件 -->
         <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version> <!-- 资源文件处理插件 -->
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version> <!-- 源码打包插件 -->
-        <maven-javadoc-plugin.version>3.3.1</maven-javadoc-plugin.version> <!-- 文档打包插件 -->
+        <maven-javadoc-plugin.version>3.4.0</maven-javadoc-plugin.version> <!-- 文档打包插件 -->
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version> <!-- 部署插件 -->
         <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version> <!-- GPG 签名插件 -->
         <maven-release-plugin.version>3.0.0-M6</maven-release-plugin.version> <!-- 发布插件 -->
