@@ -84,7 +84,7 @@
         <formatter.plugin>2.16.0</formatter.plugin>
         <impsort.plugin>1.6.2</impsort.plugin>
         <whitespace.plugin>1.0.5</whitespace.plugin>
-        <xml-format.plugin>3.2.0</xml-format.plugin>
+        <xml-format.plugin>3.2.1</xml-format.plugin>
     </properties>
 
     <build>
