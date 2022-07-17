@@ -76,7 +76,7 @@
         <maven-build-helper.version>1.2</maven-build-helper.version>
         <directory-maven-plugin.version>1.0</directory-maven-plugin.version>
         <flyway-maven-plugin.version>8.2.0</flyway-maven-plugin.version>
-        <jacoco.version>0.8.7</jacoco.version>
+        <jacoco.version>0.8.8</jacoco.version>
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
         <antrun-plugin.version>3.0.0</antrun-plugin.version>
         <docker-maven-plugin.version>0.38.0</docker-maven-plugin.version>
