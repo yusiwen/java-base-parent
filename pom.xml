@@ -65,7 +65,7 @@
         <dependency-check-maven.version>7.1.1</dependency-check-maven.version>
         <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version> <!-- clean插件 -->
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version> <!--checkstyle check插件 -->
-        <checkstyle.version>9.3</checkstyle.version>
+        <checkstyle.version>10.3.1</checkstyle.version>
         <maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
         <finbugs.version>3.0.1</finbugs.version>
         <spotbugs-maven-plugin.version>4.7.1.0</spotbugs-maven-plugin.version> <!--findbugs check插件 -->
