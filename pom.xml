@@ -70,7 +70,7 @@
         <finbugs.version>3.0.1</finbugs.version>
         <spotbugs-maven-plugin.version>4.7.1.0</spotbugs-maven-plugin.version> <!--findbugs check插件 -->
         <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version> <!--读取properties文件插件 -->
-        <maven-pmd-plugin.version>3.17.0</maven-pmd-plugin.version>
+        <maven-pmd-plugin.version>3.10.0</maven-pmd-plugin.version>
         <p3c-pmd.version>2.1.1</p3c-pmd.version>
         <build-helper-maven-plugin.version>3.3.0</build-helper-maven-plugin.version>
         <maven-build-helper.version>1.2</maven-build-helper.version>
@@ -695,7 +695,18 @@
             </build>
         </profile>
         <profile>
-            <id>jdk11</id>
+            <id>jdk8</id>
+            <activation>
+                <jdk>1.8</jdk>
+            </activation>
+            <properties>
+                <checkstyle.version>9.3</checkstyle.version>
+                <formatter.plugin>2.16.0</formatter.plugin>
+                <impsort.plugin>1.6.2</impsort.plugin>
+            </properties>
+        </profile>
+        <profile>
+            <id>jdk11+</id>
             <activation>
                 <jdk>[11,18)</jdk>
             </activation>
