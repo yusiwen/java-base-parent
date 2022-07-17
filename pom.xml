@@ -80,7 +80,7 @@
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
         <antrun-plugin.version>3.0.0</antrun-plugin.version>
         <docker-maven-plugin.version>0.38.0</docker-maven-plugin.version>
-        <formatter.plugin>2.16.0</formatter.plugin>
+        <formatter.plugin>2.19.0</formatter.plugin>
         <impsort.plugin>1.6.2</impsort.plugin>
         <whitespace.plugin>1.0.5</whitespace.plugin>
         <xml-format.plugin>3.2.1</xml-format.plugin>
