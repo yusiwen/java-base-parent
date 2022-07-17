@@ -48,6 +48,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <java.version>1.8</java.version>
         <build.environment>dev</build.environment>
+        <jar.name>${project.name}-${project.version}</jar.name>
 
         <docker.build.name>${project.groupId}.${project.artifactId}:${project.version}-${build.environment}</docker.build.name>
         <docker.image.skip>true</docker.image.skip>
@@ -77,14 +78,13 @@
         <flyway-maven-plugin.version>8.2.0</flyway-maven-plugin.version>
         <jacoco.version>0.8.7</jacoco.version>
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
-
         <antrun-plugin.version>3.0.0</antrun-plugin.version>
         <docker-maven-plugin.version>0.38.0</docker-maven-plugin.version>
-
         <formatter.plugin>2.16.0</formatter.plugin>
         <impsort.plugin>1.6.2</impsort.plugin>
         <whitespace.plugin>1.0.5</whitespace.plugin>
         <xml-format.plugin>3.2.1</xml-format.plugin>
+        <spring-boot-maven-plugin.version>2.7.1</spring-boot-maven-plugin.version>
     </properties>
 
     <build>
@@ -226,9 +226,8 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring-boot.version}</version>
+                    <version>${spring-boot-maven-plugin.version}</version>
                     <configuration>
-                        <!--suppress UnresolvedMavenProperty -->
                         <finalName>${jar.name}</finalName>
                         <fork>true</fork>
                     </configuration>
@@ -698,7 +697,7 @@
         <profile>
             <id>jdk11</id>
             <activation>
-                <jdk>11</jdk>
+                <jdk>[11,18)</jdk>
             </activation>
             <properties>
                 <!-- JAXB -->
