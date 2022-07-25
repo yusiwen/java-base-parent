@@ -533,7 +533,6 @@
                     <configuration>
                         <indentSize>4</indentSize>
                         <lineLength>120</lineLength>
-                        <skip>true</skip> <!-- TODO: Skip this for now until some adjustments are made -->
                     </configuration>
                 </plugin>
 
