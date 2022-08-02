@@ -90,6 +90,7 @@
         <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version> <!-- clean插件 -->
         <!-- checks -->
         <error-prone.version>2.14.0</error-prone.version>
+        <modernizer.plugin>2.4.0</modernizer.plugin>
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version> <!--checkstyle check插件 -->
         <checkstyle.version>10.3.2</checkstyle.version>
         <finbugs.version>3.0.1</finbugs.version>
@@ -329,6 +330,19 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.gaul</groupId>
+                <artifactId>modernizer-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>modernizer</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>modernizer</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <pluginManagement>
@@ -613,6 +627,15 @@
                         <cpanfileAnalyzerEnabled>false</cpanfileAnalyzerEnabled>
                         <yarnAuditAnalyzerEnabled>false</yarnAuditAnalyzerEnabled>
                         <pnpmAuditAnalyzerEnabled>false</pnpmAuditAnalyzerEnabled>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.gaul</groupId>
+                    <artifactId>modernizer-maven-plugin</artifactId>
+                    <version>${modernizer.plugin}</version>
+                    <configuration>
+                        <javaVersion>${maven.compiler.target}</javaVersion>
                     </configuration>
                 </plugin>
 
