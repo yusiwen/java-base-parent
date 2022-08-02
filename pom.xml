@@ -90,7 +90,7 @@
         <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version> <!-- clean插件 -->
         <!-- checks -->
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version> <!--checkstyle check插件 -->
-        <checkstyle.version>10.3.1</checkstyle.version>
+        <checkstyle.version>10.3.2</checkstyle.version>
         <finbugs.version>3.0.1</finbugs.version>
         <findsecbugs.version>1.11.0</findsecbugs.version>
         <sb-contrib.version>7.4.7</sb-contrib.version>
