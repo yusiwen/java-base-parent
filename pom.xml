@@ -67,6 +67,9 @@
         <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+        <!-- Indent -->
+        <indent.size>4</indent.size>
+
         <!-- Build -->
         <build.environment>dev</build.environment>
 
@@ -103,7 +106,7 @@
         <maven-pmd-plugin.version>3.8</maven-pmd-plugin.version>
         <p3c-pmd.version>1.3.6</p3c-pmd.version>
         <build-helper-maven-plugin.version>3.3.0</build-helper-maven-plugin.version>
-        <maven-build-helper.version>1.2</maven-build-helper.version>
+        <maven-build-helper.version>1.3</maven-build-helper.version>
         <jacoco.version>0.8.8</jacoco.version>
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
         <!-- test -->
@@ -658,7 +661,7 @@
                     </dependencies>
                     <configuration>
                         <!--suppress UnresolvedMavenProperty -->
-                        <configFile>formatter.xml</configFile>
+                        <configFile>formatter-${indent.size}spaces.xml</configFile>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -681,7 +684,7 @@
                     <artifactId>xml-format-maven-plugin</artifactId>
                     <version>${xml-format.plugin}</version>
                     <configuration>
-                        <indentSize>4</indentSize>
+                        <indentSize>${indent.size}</indentSize>
                         <lineLength>120</lineLength>
                     </configuration>
                 </plugin>
