@@ -89,6 +89,7 @@
         <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version> <!-- 依赖插件 -->
         <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version> <!-- clean插件 -->
         <!-- checks -->
+        <error-prone.version>2.14.0</error-prone.version>
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version> <!--checkstyle check插件 -->
         <checkstyle.version>10.3.2</checkstyle.version>
         <finbugs.version>3.0.1</finbugs.version>
@@ -678,6 +679,7 @@
                             <exclude>.gitignore</exclude>
                             <exclude>.format</exclude>
                             <exclude>.compress</exclude>
+                            <exclude>.error-prone</exclude>
                             <exclude>LICENSE</exclude>
                             <exclude>LICENSE_HEADER</exclude>
                             <exclude>LICENSE.txt</exclude>
@@ -1290,6 +1292,22 @@
             </build>
         </profile>
         <profile>
+            <id>error-prone-common</id>
+            <activation>
+                <file>
+                    <exists>.error-prone</exists>
+                </file>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>com.google.errorprone</groupId>
+                    <artifactId>error_prone_annotations</artifactId>
+                    <version>${error-prone.version}</version>
+                    <scope>provided</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
             <id>jdk8</id>
             <activation>
                 <jdk>1.8</jdk>
@@ -1301,9 +1319,43 @@
             </properties>
         </profile>
         <profile>
-            <id>jdk11+</id>
+            <id>jdk8-error-prone</id>
             <activation>
-                <jdk>[11,18)</jdk>
+                <jdk>1.8</jdk>
+                <file>
+                    <exists>.error-prone</exists>
+                </file>
+            </activation>
+            <properties>
+                <!-- using github.com/google/error-prone-javac is required when running on JDK 8 -->
+                <javac.version>9+181-r4173-1</javac.version>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <fork>true</fork>
+                            <compilerArgs combine.children="append">
+                                <arg>-J-Xbootclasspath/p:${settings.localRepository}/com/google/errorprone/javac/${javac.version}/javac-${javac.version}.jar</arg>
+                            </compilerArgs>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>com.google.errorprone</groupId>
+                                <artifactId>javac</artifactId>
+                                <version>${javac.version}</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>jdk9+</id>
+            <activation>
+                <jdk>[9,18)</jdk>
             </activation>
             <properties>
                 <!-- JAXB -->
@@ -1333,6 +1385,85 @@
                     <version>${jaxb.api.version}</version>
                 </dependency>
             </dependencies>
+        </profile>
+        <profile>
+            <id>jdk9-error-prone</id>
+            <activation>
+                <jdk>[9,16)</jdk>
+                <file>
+                    <exists>.error-prone</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <compilerArgs>
+                                <arg>-XDcompilePolicy=simple</arg>
+                                <arg>-Xplugin:ErrorProne</arg>
+                            </compilerArgs>
+                            <annotationProcessorPaths>
+                                <path>
+                                    <groupId>com.google.errorprone</groupId>
+                                    <artifactId>error_prone_core</artifactId>
+                                    <version>${error-prone.version}</version>
+                                </path>
+                                <!-- Other annotation processors go here.
+                                If 'annotationProcessorPaths' is set, processors will no longer be
+                                discovered on the regular -classpath; see also 'Using Error Prone
+                                together with other annotation processors' below. -->
+                            </annotationProcessorPaths>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>jdk16-error-prone</id>
+            <activation>
+                <jdk>[16,)</jdk>
+                <file>
+                    <exists>.error-prone</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <fork>true</fork>
+                            <compilerArgs>
+                                <arg>-XDcompilePolicy=simple</arg>
+                                <arg>-Xplugin:ErrorProne</arg>
+                                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
+                                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
+                                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED</arg>
+                                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
+                                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED</arg>
+                                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+                                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+                                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                            </compilerArgs>
+                            <annotationProcessorPaths>
+                                <path>
+                                    <groupId>com.google.errorprone</groupId>
+                                    <artifactId>error_prone_core</artifactId>
+                                    <version>${error-prone.version}</version>
+                                </path>
+                                <!-- Other annotation processors go here.
+                                If 'annotationProcessorPaths' is set, processors will no longer be
+                                discovered on the regular -classpath; see also 'Using Error Prone
+                                together with other annotation processors' below. -->
+                            </annotationProcessorPaths>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
         <profile>
             <id>eclipse</id>
