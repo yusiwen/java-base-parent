@@ -79,7 +79,7 @@
         <dependency-check-maven.version>7.1.1</dependency-check-maven.version>
         <directory-maven-plugin.version>1.0</directory-maven-plugin.version>
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version> <!-- 编译插件 -->
-        <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version> <!-- 资源文件处理插件 -->
+        <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version> <!-- 资源文件处理插件 -->
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version> <!-- 源码打包插件 -->
         <maven-javadoc-plugin.version>3.4.0</maven-javadoc-plugin.version> <!-- 文档打包插件 -->
         <maven-deploy-plugin.version>3.0.0</maven-deploy-plugin.version> <!-- 部署插件 -->
