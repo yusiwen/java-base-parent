@@ -92,7 +92,7 @@
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version> <!--checkstyle check插件 -->
         <checkstyle.version>10.3.2</checkstyle.version>
         <finbugs.version>3.0.1</finbugs.version>
-        <findsecbugs.version>1.11.0</findsecbugs.version>
+        <findsecbugs.version>1.12.0</findsecbugs.version>
         <sb-contrib.version>7.4.7</sb-contrib.version>
         <bug-pattern.version>1.5.0</bug-pattern.version>
         <spotbugs-maven-plugin.version>4.7.1.1</spotbugs-maven-plugin.version> <!--findbugs check插件 -->
