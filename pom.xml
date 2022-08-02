@@ -10,6 +10,7 @@
     <name>java-base-parent</name>
     <description>Parent pom for java projects</description>
     <url>https://github.com/yusiwen/java-base-parent</url>
+    <inceptionYear>2021</inceptionYear>
 
     <licenses>
         <license>
@@ -43,16 +44,40 @@
     </ciManagement>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Copyright -->
+        <copyright>2022</copyright>
+        <!-- Maven minimum version -->
+        <maven.min-version>3.6.3</maven.min-version>
+        <!-- Maven date configuration -->
+        <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
+
+        <!-- Default JDK version -->
+        <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <java.version>1.8</java.version>
-        <build.environment>dev</build.environment>
-        <jar.name>${project.name}-${project.version}</jar.name>
+        <maven.compiler.testSource>1.8</maven.compiler.testSource>
+        <maven.compiler.testTarget>1.8</maven.compiler.testTarget>
 
+        <!-- Signature Settings -->
+        <signature.artifact>java18</signature.artifact>
+        <signature.version>1.0</signature.version>
+
+        <!-- Default file encoding -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- Build -->
+        <build.environment>dev</build.environment>
+
+        <!-- Docker build -->
         <docker.build.name>${project.groupId}.${project.artifactId}:${project.version}-${build.environment}</docker.build.name>
         <docker.image.skip>true</docker.image.skip>
 
+        <!-- Maven plugins -->
+        <animal-sniffer.plugin>1.20</animal-sniffer.plugin>
+        <dependency-check-maven.version>7.1.1</dependency-check-maven.version>
+        <directory-maven-plugin.version>1.0</directory-maven-plugin.version>
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version> <!-- 编译插件 -->
         <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version> <!-- 资源文件处理插件 -->
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version> <!-- 源码打包插件 -->
@@ -62,12 +87,14 @@
         <maven-release-plugin.version>3.0.0-M6</maven-release-plugin.version> <!-- 发布插件 -->
         <maven-war-plugin.version>3.2.2</maven-war-plugin.version> <!-- war打包插件 -->
         <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version> <!-- 依赖插件 -->
-        <dependency-check-maven.version>7.1.1</dependency-check-maven.version>
         <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version> <!-- clean插件 -->
+        <!-- checks -->
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version> <!--checkstyle check插件 -->
         <checkstyle.version>10.3.1</checkstyle.version>
-        <maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
         <finbugs.version>3.0.1</finbugs.version>
+        <findsecbugs.version>1.11.0</findsecbugs.version>
+        <sb-contrib.version>7.4.7</sb-contrib.version>
+        <bug-pattern.version>1.5.0</bug-pattern.version>
         <spotbugs-maven-plugin.version>4.7.1.0</spotbugs-maven-plugin.version> <!--findbugs check插件 -->
         <spotbugs.version>4.7.1</spotbugs.version>
         <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version> <!--读取properties文件插件 -->
@@ -75,17 +102,51 @@
         <p3c-pmd.version>1.3.6</p3c-pmd.version>
         <build-helper-maven-plugin.version>3.3.0</build-helper-maven-plugin.version>
         <maven-build-helper.version>1.2</maven-build-helper.version>
-        <directory-maven-plugin.version>1.0</directory-maven-plugin.version>
-        <flyway-maven-plugin.version>8.2.0</flyway-maven-plugin.version>
         <jacoco.version>0.8.8</jacoco.version>
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
+        <!-- test -->
+        <surefire.plugin>3.0.0-M7</surefire.plugin>
+        <!-- site -->
+        <doxia.version>1.11.1</doxia.version>
+        <fluido.version>1.11.1</fluido.version>
+        <site.plugin>3.12.0</site.plugin>
+        <wagon-git.version>2.0.4</wagon-git.version>
+        <!-- report -->
+        <changelog.plugin>2.3</changelog.plugin>
+        <changes.plugin>2.12.1</changes.plugin>
+        <javancss.plugin>2.1</javancss.plugin>
+        <jdepend.plugin>2.0</jdepend.plugin>
+        <maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
+        <project-info.plugin>3.4.0</project-info.plugin>
+        <taglist.plugin>3.0.0</taglist.plugin>
+        <versions.plugin>2.11.0</versions.plugin>
+        <!-- build -->
         <antrun-plugin.version>3.1.0</antrun-plugin.version>
         <docker-maven-plugin.version>0.40.1</docker-maven-plugin.version>
+        <git-commit.plugin>4.9.10</git-commit.plugin>
+        <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
+        <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
+        <!-- format -->
         <formatter.plugin>2.19.0</formatter.plugin>
         <impsort.plugin>1.7.0</impsort.plugin>
+        <license.plugin>4.1</license.plugin>
+        <license-git.version>4.1</license-git.version>
+        <tidy.plugin>1.1.0</tidy.plugin>
         <whitespace.plugin>1.0.5</whitespace.plugin>
         <xml-format.plugin>3.2.1</xml-format.plugin>
+        <!-- others -->
+        <enforcer.plugin>3.1.0</enforcer.plugin>
+        <flyway-maven-plugin.version>8.2.0</flyway-maven-plugin.version>
+        <htmlcompressor.plugin>1.7.2</htmlcompressor.plugin>
+        <htmlcompressor.version>1.7.3</htmlcompressor.version>
+        <wagon.plugin>2.0.2</wagon.plugin>
+        <wagon-ssh.version>3.5.2</wagon-ssh.version>
+        <yuicompressor.plugin>1.5.1</yuicompressor.plugin>
+        <yuicompressor.version>2.4.8</yuicompressor.version>
+
+        <!-- Spring boot plugin -->
         <spring-boot-maven-plugin.version>2.7.2</spring-boot-maven-plugin.version>
+        <spring-boot-jar-name>${project.name}-${project.version}</spring-boot-jar-name>
     </properties>
 
     <build>
@@ -209,6 +270,23 @@
                     <!--findbugs需要忽略的错误的配置文件-->
                     <!--suppress UnresolvedMavenProperty -->
                     <excludeFilterFile>findbugs-exclude-filter.xml</excludeFilterFile>
+                    <plugins>
+                        <plugin>
+                            <groupId>com.mebigfatguy.sb-contrib</groupId>
+                            <artifactId>sb-contrib</artifactId>
+                            <version>${sb-contrib.version}</version>
+                        </plugin>
+                        <plugin>
+                            <groupId>com.h3xstream.findsecbugs</groupId>
+                            <artifactId>findsecbugs-plugin</artifactId>
+                            <version>${findsecbugs.version}</version>
+                        </plugin>
+                        <plugin>
+                            <groupId>jp.skypencil.findbugs.slf4j</groupId>
+                            <artifactId>bug-pattern</artifactId>
+                            <version>${bug-pattern.version}</version>
+                        </plugin>
+                    </plugins>
                 </configuration>
                 <executions>
                     <execution>
@@ -221,6 +299,36 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>enforce-clean</id>
+                        <phase>pre-clean</phase>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>enforce-site</id>
+                        <phase>pre-site</phase>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
@@ -229,7 +337,7 @@
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${spring-boot-maven-plugin.version}</version>
                     <configuration>
-                        <finalName>${jar.name}</finalName>
+                        <finalName>${spring-boot-jar-name}</finalName>
                         <fork>true</fork>
                     </configuration>
                     <executions>
@@ -259,7 +367,7 @@
                     <artifactId>maven-resources-plugin</artifactId> <!-- 资源管理插件 -->
                     <version>${maven-resources-plugin.version}</version>
                     <configuration>
-                        <encoding>UTF-8</encoding>
+                        <encoding>${project.build.resourceEncoding}</encoding>
                         <delimiters>
                             <delimiter>${*}</delimiter> <!-- 使用${*}作为变量分隔符 -->
                         </delimiters>
@@ -317,6 +425,18 @@
                     <version>${maven-release-plugin.version}</version>
                 </plugin>
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>${enforcer.plugin}</version>
+                    <configuration>
+                        <rules>
+                            <requireMavenVersion>
+                                <version>[${maven.min-version},)</version>
+                            </requireMavenVersion>
+                        </rules>
+                    </configuration>
+                </plugin>
+                <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
                     <version>${build-helper-maven-plugin.version}</version>
@@ -338,6 +458,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${surefire.plugin}</version>
                     <configuration>
                         <testFailureIgnore>true</testFailureIgnore>
                         <includes>
@@ -496,6 +617,11 @@
 
                 <!--  Formatter -->
                 <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>tidy-maven-plugin</artifactId>
+                    <version>${tidy.plugin}</version>
+                </plugin>
+                <plugin>
                     <groupId>net.revelc.code.formatter</groupId>
                     <artifactId>formatter-maven-plugin</artifactId>
                     <version>${formatter.plugin}</version>
@@ -535,71 +661,306 @@
                         <lineLength>120</lineLength>
                     </configuration>
                 </plugin>
-
-                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
                 <plugin>
-                    <groupId>org.eclipse.m2e</groupId>
-                    <artifactId>lifecycle-mapping</artifactId>
-                    <version>1.0.0</version>
+                    <groupId>com.mycila</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>${license.plugin}</version>
                     <configuration>
-                        <lifecycleMappingMetadata>
-                            <pluginExecutions>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>org.codehaus.mojo</groupId>
-                                        <artifactId>build-helper-maven-plugin</artifactId>
-                                        <versionRange>[1.9.1,)</versionRange>
-                                        <goals>
-                                            <goal>validate</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                </pluginExecution>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>org.commonjava.maven.plugins</groupId>
-                                        <artifactId>directory-maven-plugin</artifactId>
-                                        <versionRange>[0.3.1,)</versionRange>
-                                        <goals>
-                                            <goal>validate</goal>
-                                            <goal>highest-basedir</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore />
-                                    </action>
-                                </pluginExecution>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>com.github.spotbugs</groupId>
-                                        <artifactId>spotbugs-maven-plugin</artifactId>
-                                        <versionRange>[4.3.0,)</versionRange>
-                                        <goals>
-                                            <goal>check</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore />
-                                    </action>
-                                </pluginExecution>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>cn.yusiwen</groupId>
-                                        <artifactId>whitespace-maven-plugin</artifactId>
-                                        <versionRange>[1.0.5,)</versionRange>
-                                        <goals>
-                                            <goal>trim</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore />
-                                    </action>
-                                </pluginExecution>
-                            </pluginExecutions>
-                        </lifecycleMappingMetadata>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <header>${license.header}</header>
+                        <excludes>
+                            <exclude>**/*.lck</exclude>
+                            <exclude>**/*.log</exclude>
+                            <exclude>**/*maven-wrapper.properties</exclude>
+                            <exclude>**/*MavenWrapperDownloader.java</exclude>
+                            <exclude>.factorypath</exclude>
+                            <exclude>.gitattributes</exclude>
+                            <exclude>.gitignore</exclude>
+                            <exclude>.format</exclude>
+                            <exclude>.compress</exclude>
+                            <exclude>LICENSE</exclude>
+                            <exclude>LICENSE_HEADER</exclude>
+                            <exclude>LICENSE.txt</exclude>
+                            <exclude>LICENSE.TXT</exclude>
+                            <exclude>license.txt</exclude>
+                            <exclude>mvnw</exclude>
+                            <exclude>mvnw.cmd</exclude>
+                        </excludes>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.mycila</groupId>
+                            <artifactId>license-maven-plugin-git</artifactId>
+                            <version>${license-git.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+                <!-- Wagon -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>wagon-maven-plugin</artifactId>
+                    <version>${wagon.plugin}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>animal-sniffer-maven-plugin</artifactId>
+                    <version>${animal-sniffer.plugin}</version>
+                    <configuration>
+                        <signature>
+                            <groupId>org.codehaus.mojo.signature</groupId>
+                            <artifactId>${signature.artifact}</artifactId>
+                            <version>${signature.version}</version>
+                        </signature>
                     </configuration>
                 </plugin>
+
+                <!-- Build Plugins -->
+                <plugin>
+                    <groupId>pl.project13.maven</groupId>
+                    <artifactId>git-commit-id-plugin</artifactId>
+                    <version>${git-commit.plugin}</version>
+                    <configuration>
+                        <failOnNoGitDirectory>false</failOnNoGitDirectory>
+                        <!-- Fixes occassional issue in commit id plugin - see
+                            https://github.com/ktoso/maven-git-commit-id-plugin/issues/61 -->
+                        <gitDescribe>
+                            <always>true</always>
+                        </gitDescribe>
+                    </configuration>
+                </plugin>
+
+                <!-- Packaging types / tools -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar-plugin.version}</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                            </manifest>
+                            <manifestEntries>
+                                <Build-Time>${maven.build.timestamp}</Build-Time>
+                                <Copyright>${copyright}</Copyright>
+                                <!--suppress UnresolvedMavenProperty -->
+                                <Git-Revision>${git.commit.id}</Git-Revision>
+                                <Os-Name>${os.name}</Os-Name>
+                                <Os-Arch>${os.arch}</Os-Arch>
+                                <Os-Version>${os.version}</Os-Version>
+                                <X-Compile-Source-JDK>${maven.compiler.source}</X-Compile-Source-JDK>
+                                <X-Compile-Target-JDK>${maven.compiler.target}</X-Compile-Target-JDK>
+                            </manifestEntries>
+                        </archive>
+                        <skipIfEmpty>true</skipIfEmpty>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${maven-war-plugin.version}</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                            </manifest>
+                            <manifestEntries>
+                                <Build-Time>${maven.build.timestamp}</Build-Time>
+                                <Copyright>${copyright}</Copyright>
+                                <!--suppress UnresolvedMavenProperty -->
+                                <Git-Revision>${git.commit.id}</Git-Revision>
+                                <Os-Name>${os.name}</Os-Name>
+                                <Os-Arch>${os.arch}</Os-Arch>
+                                <Os-Version>${os.version}</Os-Version>
+                                <X-Compile-Source-JDK>${maven.compiler.source}</X-Compile-Source-JDK>
+                                <X-Compile-Target-JDK>${maven.compiler.target}</X-Compile-Target-JDK>
+                            </manifestEntries>
+                        </archive>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.github.hazendaz.maven</groupId>
+                    <artifactId>htmlcompressor-maven-plugin</artifactId>
+                    <version>${htmlcompressor.plugin}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.github.hazendaz</groupId>
+                            <artifactId>htmlcompressor</artifactId>
+                            <version>${htmlcompressor.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>com.yahoo.platform.yui</groupId>
+                            <artifactId>yuicompressor</artifactId>
+                            <version>${yuicompressor.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <plugin>
+                    <groupId>net.alchim31.maven</groupId>
+                    <artifactId>yuicompressor-maven-plugin</artifactId>
+                    <version>${yuicompressor.plugin}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.yahoo.platform.yui</groupId>
+                            <artifactId>yuicompressor</artifactId>
+                            <version>${yuicompressor.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+                <!-- Site -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${site.plugin}</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                            </manifest>
+                            <manifestEntries>
+                                <Build-Time>${maven.build.timestamp}</Build-Time>
+                                <Copyright>${copyright}</Copyright>
+                                <!--suppress UnresolvedMavenProperty -->
+                                <Git-Revision>${git.commit.id}</Git-Revision>
+                                <Os-Name>${os.name}</Os-Name>
+                                <Os-Arch>${os.arch}</Os-Arch>
+                                <Os-Version>${os.version}</Os-Version>
+                                <X-Compile-Source-JDK>${maven.compiler.source}</X-Compile-Source-JDK>
+                                <X-Compile-Target-JDK>${maven.compiler.target}</X-Compile-Target-JDK>
+                            </manifestEntries>
+                        </archive>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-markdown</artifactId>
+                            <version>${doxia.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>net.trajano.wagon</groupId>
+                            <artifactId>wagon-git</artifactId>
+                            <version>${wagon-git.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.wagon</groupId>
+                            <artifactId>wagon-ssh</artifactId>
+                            <version>${wagon-ssh.version}</version>
+                        </dependency>
+                        <!-- For reporting only of versions -->
+                        <dependency>
+                            <groupId>org.apache.maven.skins</groupId>
+                            <artifactId>maven-fluido-skin</artifactId>
+                            <version>${fluido.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+                <!-- Report Only -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>javancss-maven-plugin</artifactId>
+                    <version>${javancss.plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>jdepend-maven-plugin</artifactId>
+                    <version>${jdepend.plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-changelog-plugin</artifactId>
+                    <version>${changelog.plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-changes-plugin</artifactId>
+                    <version>${changes.plugin}</version>
+                    <configuration>
+                        <githubAPIScheme>https</githubAPIScheme>
+                        <githubAPIPort>443</githubAPIPort>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jxr-plugin</artifactId>
+                    <version>${maven-jxr-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>${project-info.plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-report-plugin</artifactId>
+                    <version>${surefire.plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>taglist-maven-plugin</artifactId>
+                    <version>${taglist.plugin}</version>
+                    <configuration>
+                        <tagListOptions>
+                            <tagClasses>
+                                <tagClass>
+                                    <displayName>FIXME Work</displayName>
+                                    <tags>
+                                        <tag>
+                                            <matchString>fixme</matchString>
+                                            <matchType>ignoreCase</matchType>
+                                        </tag>
+                                        <tag>
+                                            <matchString>@fixme</matchString>
+                                            <matchType>ignoreCase</matchType>
+                                        </tag>
+                                    </tags>
+                                </tagClass>
+                                <tagClass>
+                                    <displayName>Todo Work</displayName>
+                                    <tags>
+                                        <tag>
+                                            <matchString>todo</matchString>
+                                            <matchType>ignoreCase</matchType>
+                                        </tag>
+                                        <tag>
+                                            <matchString>@todo</matchString>
+                                            <matchType>ignoreCase</matchType>
+                                        </tag>
+                                    </tags>
+                                </tagClass>
+                                <tagClass>
+                                    <displayName>Deprecated Work</displayName>
+                                    <tags>
+                                        <tag>
+                                            <matchString>@deprecated</matchString>
+                                            <matchType>ignoreCase</matchType>
+                                        </tag>
+                                    </tags>
+                                </tagClass>
+                            </tagClasses>
+                        </tagListOptions>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${versions.plugin}</version>
+                </plugin>
+
             </plugins>
         </pluginManagement>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>${wagon-ssh.version}</version>
+            </extension>
+        </extensions>
     </build>
 
     <dependencyManagement>
@@ -611,6 +972,97 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-changelog-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-changes-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>github-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <!-- select non-aggregate reports -->
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <!-- This plugin will fail if any POM is marked as Byte Order
+                Mark is UTF-8 (BOM). If this occurs, create a new POM and move the contents
+                in order to fix. For reference, this was a problem with mybatis/mybatis-spring
+                poms. -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>taglist-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>javancss-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jdepend-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>aggregate</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
 
     <profiles>
         <profile>
@@ -646,6 +1098,66 @@
             <properties>
                 <docker.image.skip>false</docker.image.skip>
             </properties>
+        </profile>
+        <profile>
+            <id>compression</id>
+            <activation>
+                <file>
+                    <exists>.compress</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.hazendaz.maven</groupId>
+                        <artifactId>htmlcompressor-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>default-compile</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>html</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <compressCss>true</compressCss>
+                            <compressJavaScript>true</compressJavaScript>
+                            <javascriptHtmlSprite>false</javascriptHtmlSprite>
+                            <yuiJsNoMunge>true</yuiJsNoMunge>
+                            <removeIntertagSpaces>true</removeIntertagSpaces>
+                            <srcFolder>${project.basedir}/src/main/resources</srcFolder>
+                            <targetFolder>${project.basedir}/target/classes</targetFolder>
+                            <fileExt>
+                                <fileExt>html</fileExt>
+                                <fileExt>xhtml</fileExt>
+                                <fileExt>xml</fileExt>
+                            </fileExt>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>net.alchim31.maven</groupId>
+                        <artifactId>yuicompressor-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>default-compile</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>compress</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <nomunge>true</nomunge>
+                            <nosuffix>true</nosuffix>
+                            <excludes>
+                                <exclude>**/*.min.js</exclude>
+                                <exclude>**/*.min.css</exclude>
+                            </excludes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
         <profile>
             <id>format</id>
@@ -705,6 +1217,79 @@
             </build>
         </profile>
         <profile>
+            <id>license-header</id>
+            <activation>
+                <file>
+                    <exists>LICENSE_HEADER</exists>
+                </file>
+            </activation>
+            <properties>
+                <license.header>LICENSE_HEADER</license.header>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.mycila</groupId>
+                        <artifactId>license-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>format</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>license-txt</id>
+            <activation>
+                <file>
+                    <exists>license.txt</exists>
+                </file>
+            </activation>
+            <properties>
+                <license.header>license.txt</license.header>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.mycila</groupId>
+                        <artifactId>license-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>format</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>sort</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>tidy-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>pom</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
             <id>jdk8</id>
             <activation>
                 <jdk>1.8</jdk>
@@ -748,6 +1333,150 @@
                     <version>${jaxb.api.version}</version>
                 </dependency>
             </dependencies>
+        </profile>
+        <profile>
+            <id>eclipse</id>
+            <activation>
+                <property>
+                    <name>m2e.version</name>
+                </property>
+            </activation>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+                        <plugin>
+                            <groupId>org.eclipse.m2e</groupId>
+                            <artifactId>lifecycle-mapping</artifactId>
+                            <version>1.0.0</version>
+                            <configuration>
+                                <lifecycleMappingMetadata>
+                                    <pluginExecutions>
+                                        <pluginExecution>
+                                            <pluginExecutionFilter>
+                                                <groupId>org.codehaus.mojo</groupId>
+                                                <artifactId>build-helper-maven-plugin</artifactId>
+                                                <versionRange>[${build-helper-maven-plugin.version},)</versionRange>
+                                                <goals>
+                                                    <goal>validate</goal>
+                                                </goals>
+                                            </pluginExecutionFilter>
+                                        </pluginExecution>
+                                        <pluginExecution>
+                                            <pluginExecutionFilter>
+                                                <groupId>org.commonjava.maven.plugins</groupId>
+                                                <artifactId>directory-maven-plugin</artifactId>
+                                                <versionRange>[${directory-maven-plugin.version},)</versionRange>
+                                                <goals>
+                                                    <goal>validate</goal>
+                                                    <goal>highest-basedir</goal>
+                                                </goals>
+                                            </pluginExecutionFilter>
+                                            <action>
+                                                <ignore />
+                                            </action>
+                                        </pluginExecution>
+                                        <pluginExecution>
+                                            <pluginExecutionFilter>
+                                                <groupId>com.github.hazendaz.maven</groupId>
+                                                <artifactId>htmlcompressor-maven-plugin</artifactId>
+                                                <versionRange>[${htmlcompressor.plugin},)</versionRange>
+                                                <goals>
+                                                    <goal>html</goal>
+                                                </goals>
+                                            </pluginExecutionFilter>
+                                            <action>
+                                                <ignore />
+                                            </action>
+                                        </pluginExecution>
+                                        <pluginExecution>
+                                            <pluginExecutionFilter>
+                                                <groupId>net.alchim31.maven</groupId>
+                                                <artifactId>yuicompressor-maven-plugin</artifactId>
+                                                <versionRange>[${yuicompressor.plugin},)</versionRange>
+                                                <goals>
+                                                    <goal>compress</goal>
+                                                </goals>
+                                            </pluginExecutionFilter>
+                                            <action>
+                                                <ignore />
+                                            </action>
+                                        </pluginExecution>
+                                        <pluginExecution>
+                                            <pluginExecutionFilter>
+                                                <groupId>com.github.spotbugs</groupId>
+                                                <artifactId>spotbugs-maven-plugin</artifactId>
+                                                <versionRange>[${spotbugs-maven-plugin.version},)</versionRange>
+                                                <goals>
+                                                    <goal>check</goal>
+                                                </goals>
+                                            </pluginExecutionFilter>
+                                            <action>
+                                                <ignore />
+                                            </action>
+                                        </pluginExecution>
+                                        <pluginExecution>
+                                            <pluginExecutionFilter>
+                                                <groupId>net.revelc.code.formatter</groupId>
+                                                <artifactId>formatter-maven-plugin</artifactId>
+                                                <versionRange>[${formatter.plugin},)</versionRange>
+                                                <goals>
+                                                    <goal>format</goal>
+                                                </goals>
+                                            </pluginExecutionFilter>
+                                            <action>
+                                                <ignore />
+                                            </action>
+                                        </pluginExecution>
+                                        <pluginExecution>
+                                            <pluginExecutionFilter>
+                                                <groupId>net.revelc.code</groupId>
+                                                <artifactId>impsort-maven-plugin</artifactId>
+                                                <versionRange>[${impsort.plugin},)</versionRange>
+                                                <goals>
+                                                    <goal>sort</goal>
+                                                </goals>
+                                            </pluginExecutionFilter>
+                                            <action>
+                                                <execute>
+                                                    <runOnConfiguration>true</runOnConfiguration>
+                                                    <runOnIncremental>true</runOnIncremental>
+                                                </execute>
+                                            </action>
+                                        </pluginExecution>
+                                        <pluginExecution>
+                                            <pluginExecutionFilter>
+                                                <groupId>cn.yusiwen</groupId>
+                                                <artifactId>whitespace-maven-plugin</artifactId>
+                                                <versionRange>[1.0.5,)</versionRange>
+                                                <goals>
+                                                    <goal>trim</goal>
+                                                </goals>
+                                            </pluginExecutionFilter>
+                                            <action>
+                                                <ignore />
+                                            </action>
+                                        </pluginExecution>
+                                        <pluginExecution>
+                                            <pluginExecutionFilter>
+                                                <groupId>org.apache.maven.plugins</groupId>
+                                                <artifactId>maven-enforcer-plugin</artifactId>
+                                                <versionRange>[${enforcer.plugin},)</versionRange>
+                                                <goals>
+                                                    <goal>enforce</goal>
+                                                </goals>
+                                            </pluginExecutionFilter>
+                                            <action>
+                                                <ignore />
+                                            </action>
+                                        </pluginExecution>
+                                    </pluginExecutions>
+                                </lifecycleMappingMetadata>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
         </profile>
     </profiles>
 </project>
