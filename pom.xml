@@ -92,7 +92,7 @@
         <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version> <!-- 依赖插件 -->
         <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version> <!-- clean插件 -->
         <!-- checks -->
-        <error-prone.version>2.14.0</error-prone.version>
+        <error-prone.version>2.15.0</error-prone.version>
         <modernizer.plugin>2.4.0</modernizer.plugin>
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version> <!--checkstyle check插件 -->
         <checkstyle.version>10.3.2</checkstyle.version>
