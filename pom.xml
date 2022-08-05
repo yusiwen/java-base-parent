@@ -223,11 +223,9 @@
                     <printFailingErrors>true</printFailingErrors>
                     <failurePriority>2</failurePriority> <!--报错优先级：共3级 -->
                     <rulesets>
-                        <!--<ruleset>rulesets/java/ali-comment.xml</ruleset>-->
-                        <!--由checkstyle检查-->
+                        <!--由checkstyle检查 <ruleset>rulesets/java/ali-comment.xml</ruleset>-->
                         <ruleset>rulesets/java/ali-concurrent.xml</ruleset>
-                        <!--<ruleset>rulesets/java/ali-constant.xml</ruleset>-->
-                        <!--由checkstyle检查-->
+                        <!--由checkstyle检查 <ruleset>rulesets/java/ali-constant.xml</ruleset>-->
                         <ruleset>rulesets/java/ali-exception.xml</ruleset>
                         <ruleset>rulesets/java/ali-flowcontrol.xml</ruleset>
                         <ruleset>rulesets/java/ali-naming.xml</ruleset>
