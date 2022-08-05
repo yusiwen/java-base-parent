@@ -141,7 +141,7 @@
         <xml-format.plugin>3.2.1</xml-format.plugin>
         <!-- others -->
         <enforcer.plugin>3.1.0</enforcer.plugin>
-        <flyway-maven-plugin.version>8.2.0</flyway-maven-plugin.version>
+        <flyway-maven-plugin.version>8.5.13</flyway-maven-plugin.version>
         <htmlcompressor.plugin>1.7.3</htmlcompressor.plugin>
         <htmlcompressor.version>1.7.3</htmlcompressor.version>
         <wagon.plugin>2.0.2</wagon.plugin>
