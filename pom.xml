@@ -151,7 +151,7 @@
         <yuicompressor.version>2.4.8</yuicompressor.version>
 
         <!-- Spring boot plugin -->
-        <spring-boot-maven-plugin.version>2.7.2</spring-boot-maven-plugin.version>
+        <spring-boot-maven-plugin.version>2.7.3</spring-boot-maven-plugin.version>
         <spring-boot-jar-name>${project.name}-${project.version}</spring-boot-jar-name>
 
         <!-- Logging -->
