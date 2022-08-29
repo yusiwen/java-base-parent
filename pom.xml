@@ -96,7 +96,7 @@
         <error-prone.version>2.15.0</error-prone.version>
         <modernizer.plugin>2.4.0</modernizer.plugin>
         <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version> <!--checkstyle check插件 -->
-        <checkstyle.version>10.3.2</checkstyle.version>
+        <checkstyle.version>10.3.3</checkstyle.version>
         <finbugs.version>3.0.1</finbugs.version>
         <findsecbugs.version>1.12.0</findsecbugs.version>
         <sb-contrib.version>7.4.7</sb-contrib.version>
