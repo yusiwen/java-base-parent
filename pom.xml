@@ -102,7 +102,7 @@
         <sb-contrib.version>7.4.7</sb-contrib.version>
         <bug-pattern.version>1.5.0</bug-pattern.version>
         <spotbugs-maven-plugin.version>4.7.1.1</spotbugs-maven-plugin.version> <!--findbugs check插件 -->
-        <spotbugs.version>4.7.1</spotbugs.version>
+        <spotbugs.version>4.7.2</spotbugs.version>
         <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version> <!--读取properties文件插件 -->
         <maven-pmd-plugin.version>3.12.0</maven-pmd-plugin.version>
         <p3c-pmd.version>2.1.1</p3c-pmd.version>
