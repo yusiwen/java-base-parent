@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>cn.yusiwen</groupId>
     <artifactId>java-base-parent</artifactId>
     <version>15-SNAPSHOT</version>
     <packaging>pom</packaging>
-
     <name>java-base-parent</name>
     <description>Parent pom for java projects</description>
     <url>https://github.com/yusiwen/java-base-parent</url>
     <inceptionYear>2021</inceptionYear>
-
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
-
     <scm>
         <connection>scm:git:ssh://git@github.com/yusiwen/java-base-parent.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/yusiwen/java-base-parent.git</developerConnection>
         <url>https://github.com/yusiwen/java-base-parent</url>
         <tag>v13.6</tag>
     </scm>
-
     <developers>
         <developer>
             <id>yusiwen</id>
@@ -33,7 +28,6 @@
             <email>yusiwen@gmail.com</email>
         </developer>
     </developers>
-
     <issueManagement>
         <system>Github</system>
         <url>https://github.com/yusiwen/java-base-parent/issues</url>
@@ -42,7 +36,6 @@
         <system>travis-ci</system>
         <url>https://travis-ci.org/yusiwen/java-base-parent</url>
     </ciManagement>
-
     <properties>
         <!-- Copyright -->
         <copyright>2022</copyright>
@@ -50,64 +43,58 @@
         <maven.min-version>3.6.3</maven.min-version>
         <!-- Maven date configuration -->
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
-
         <!-- Default JDK version -->
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.testSource>1.8</maven.compiler.testSource>
         <maven.compiler.testTarget>1.8</maven.compiler.testTarget>
-
         <!-- Signature Settings -->
         <signature.artifact>java18</signature.artifact>
         <signature.version>1.0</signature.version>
-
         <!-- Default file encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
         <!-- Indent -->
         <indent.size>4</indent.size>
-
         <!-- Build -->
         <build.environment>dev</build.environment>
-
         <!-- Docker build -->
         <docker.build.name>${project.groupId}.${project.artifactId}:${project.version}-${build.environment}</docker.build.name>
         <docker.image.skip>true</docker.image.skip>
-
         <!-- Maven plugins -->
         <animal-sniffer.plugin>1.22</animal-sniffer.plugin>
         <dependency-check-maven.version>7.2.1</dependency-check-maven.version>
         <directory-maven-plugin.version>1.0</directory-maven-plugin.version>
         <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
-        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version> <!-- 编译插件 -->
-        <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version> <!-- 资源文件处理插件 -->
-        <maven-source-plugin.version>3.2.1</maven-source-plugin.version> <!-- 源码打包插件 -->
-        <maven-javadoc-plugin.version>3.4.1</maven-javadoc-plugin.version> <!-- 文档打包插件 -->
-        <maven-deploy-plugin.version>3.0.0</maven-deploy-plugin.version> <!-- 部署插件 -->
-        <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version> <!-- GPG 签名插件 -->
-        <maven-release-plugin.version>3.0.0-M7</maven-release-plugin.version> <!-- 发布插件 -->
-        <maven-war-plugin.version>3.2.2</maven-war-plugin.version> <!-- war打包插件 -->
-        <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version> <!-- 依赖插件 -->
-        <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version> <!-- clean插件 -->
+        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
+        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+        <maven-javadoc-plugin.version>3.4.1</maven-javadoc-plugin.version>
+        <maven-deploy-plugin.version>3.0.0</maven-deploy-plugin.version>
+        <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+        <maven-release-plugin.version>3.0.0-M7</maven-release-plugin.version>
+        <maven-war-plugin.version>3.2.2</maven-war-plugin.version>
+        <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
+        <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version>
         <!-- checks -->
         <error-prone.version>2.15.0</error-prone.version>
         <modernizer.plugin>2.4.0</modernizer.plugin>
-        <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version> <!--checkstyle check插件 -->
+        <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version>
+        <!--checkstyle check插件 -->
         <checkstyle.version>10.6.0</checkstyle.version>
         <finbugs.version>3.0.1</finbugs.version>
         <findsecbugs.version>1.12.0</findsecbugs.version>
         <sb-contrib.version>7.4.7</sb-contrib.version>
         <bug-pattern.version>1.5.0</bug-pattern.version>
-        <spotbugs-maven-plugin.version>4.7.3.0</spotbugs-maven-plugin.version> <!--findbugs check插件 -->
+        <spotbugs-maven-plugin.version>4.7.3.0</spotbugs-maven-plugin.version>
         <spotbugs.version>4.7.3</spotbugs.version>
-        <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version> <!--读取properties文件插件 -->
+        <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
         <maven-pmd-plugin.version>3.12.0</maven-pmd-plugin.version>
         <p3c-pmd.version>2.1.1</p3c-pmd.version>
         <build-helper-maven-plugin.version>3.3.0</build-helper-maven-plugin.version>
-        <maven-build-helper.version>1.4.1</maven-build-helper.version>
+        <maven-build-helper.version>1.4.2</maven-build-helper.version>
         <jacoco.version>0.8.8</jacoco.version>
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
         <!-- test -->
@@ -149,11 +136,11 @@
         <wagon-ssh.version>3.5.3</wagon-ssh.version>
         <yuicompressor.plugin>1.5.1</yuicompressor.plugin>
         <yuicompressor.version>2.4.8</yuicompressor.version>
-
+        <!-- git -->
+        <git-build-hook-plugin.version>3.3.0</git-build-hook-plugin.version>
         <!-- Spring boot plugin -->
         <spring-boot-maven-plugin.version>2.7.7</spring-boot-maven-plugin.version>
         <spring-boot-jar-name>${project.name}-${project.version}</spring-boot-jar-name>
-
         <!-- Logging -->
         <log4j2.version>2.19.0</log4j2.version>
         <slf4j.version>1.7.36</slf4j.version>
@@ -165,30 +152,32 @@
         <!-- Guava -->
         <guava.version>31.1-jre</guava.version>
     </properties>
-
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.commonjava.maven.plugins</groupId>
-                <artifactId>directory-maven-plugin</artifactId> <!-- 用来生成顶级模块的绝对路径properties,提供其他插件使用-->
+                <!-- 用来生成顶级模块的绝对路径properties,提供其他插件使用-->
+                <artifactId>directory-maven-plugin</artifactId>
                 <version>${directory-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>directories</id>
                         <goals>
-                            <goal>highest-basedir</goal> <!-- 顶级模块的绝对路径-->
+                            <!-- 顶级模块的绝对路径-->
+                            <goal>highest-basedir</goal>
                         </goals>
                         <phase>validate</phase>
                         <configuration>
-                            <property>top.my.basedir</property> <!-- 顶级模块的绝对路径properties-->
+                            <!-- 顶级模块的绝对路径properties-->
+                            <property>top.my.basedir</property>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId> <!--checkstyle检查-->
+                <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${maven-checkstyle-plugin.version}</version>
                 <dependencies>
                     <dependency>
@@ -209,7 +198,7 @@
                         <configuration>
                             <violationSeverity>warn</violationSeverity>
                             <!--suppress UnresolvedMavenProperty -->
-                            <configLocation>checkstyle.xml</configLocation> <!--checkstyle自定义规则-->
+                            <configLocation>checkstyle.xml</configLocation>
                             <includeTestSourceDirectory>false</includeTestSourceDirectory>
                             <encoding>UTF-8</encoding>
                             <consoleOutput>true</consoleOutput>
@@ -225,7 +214,7 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId> <!--pmd检查-->
+                <artifactId>maven-pmd-plugin</artifactId>
                 <version>${maven-pmd-plugin.version}</version>
                 <configuration>
                     <linkXRef>false</linkXRef>
@@ -233,7 +222,7 @@
                     <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
                     <targetJdk>${java.version}</targetJdk>
                     <printFailingErrors>true</printFailingErrors>
-                    <failurePriority>2</failurePriority> <!--报错优先级：共3级 -->
+                    <failurePriority>2</failurePriority>
                     <rulesets>
                         <!--由checkstyle检查 <ruleset>rulesets/java/ali-comment.xml</ruleset>-->
                         <ruleset>rulesets/java/ali-concurrent.xml</ruleset>
@@ -266,7 +255,7 @@
             <!-- findbugs插件 -->
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
-                <artifactId>spotbugs-maven-plugin</artifactId> <!--findbugs检查-->
+                <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>${spotbugs-maven-plugin.version}</version>
                 <dependencies>
                     <dependency>
@@ -280,8 +269,10 @@
                     <effort>Max</effort>
                     <!-- Low、Medium和High (Low最严格) -->
                     <threshold>Medium</threshold>
-                    <failOnError>true</failOnError> <!--发现错误则中断构建-->
-                    <includeTests>false</includeTests> <!--不检查test代码 -->
+                    <!--发现错误则中断构建-->
+                    <failOnError>true</failOnError>
+                    <!--不检查test代码 -->
+                    <includeTests>false</includeTests>
                     <!--findbugs需要忽略的错误的配置文件-->
                     <!--suppress UnresolvedMavenProperty -->
                     <excludeFilterFile>findbugs-exclude-filter.xml</excludeFilterFile>
@@ -382,7 +373,7 @@
                     <version>${maven-clean-plugin.version}</version>
                 </plugin>
                 <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId> <!-- 编译插件 -->
+                    <artifactId>maven-compiler-plugin</artifactId>
                     <version>${maven-compiler-plugin.version}</version>
                     <configuration>
                         <source>${java.version}</source>
@@ -392,14 +383,16 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-resources-plugin</artifactId> <!-- 资源管理插件 -->
+                    <artifactId>maven-resources-plugin</artifactId>
                     <version>${maven-resources-plugin.version}</version>
                     <configuration>
                         <encoding>${project.build.resourceEncoding}</encoding>
                         <delimiters>
-                            <delimiter>${*}</delimiter> <!-- 使用${*}作为变量分隔符 -->
+                            <!-- 使用${*}作为变量分隔符 -->
+                            <delimiter>${*}</delimiter>
                         </delimiters>
-                        <useDefaultDelimiters>false</useDefaultDelimiters> <!--禁止使用默认： 默认delimiter包括 ${*}和@ -->
+                        <!--禁止使用默认： 默认delimiter包括 ${*}和@ -->
+                        <useDefaultDelimiters>false</useDefaultDelimiters>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -611,14 +604,12 @@
                         </execution>
                     </executions>
                 </plugin>
-
                 <!-- Sonar -->
                 <plugin>
                     <groupId>org.sonarsource.scanner.maven</groupId>
                     <artifactId>sonar-maven-plugin</artifactId>
                     <version>${sonar-maven-plugin.version}</version>
                 </plugin>
-
                 <!-- OWASP Vulnerabilities check -->
                 <plugin>
                     <groupId>org.owasp</groupId>
@@ -647,7 +638,6 @@
                         <pnpmAuditAnalyzerEnabled>false</pnpmAuditAnalyzerEnabled>
                     </configuration>
                 </plugin>
-
                 <plugin>
                     <groupId>org.gaul</groupId>
                     <artifactId>modernizer-maven-plugin</artifactId>
@@ -656,7 +646,6 @@
                         <javaVersion>${maven.compiler.target}</javaVersion>
                     </configuration>
                 </plugin>
-
                 <!--  Formatter -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -738,14 +727,12 @@
                         </dependency>
                     </dependencies>
                 </plugin>
-
                 <!-- Wagon -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>wagon-maven-plugin</artifactId>
                     <version>${wagon.plugin}</version>
                 </plugin>
-
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>animal-sniffer-maven-plugin</artifactId>
@@ -758,7 +745,6 @@
                         </signature>
                     </configuration>
                 </plugin>
-
                 <!-- Build Plugins -->
                 <plugin>
                     <groupId>pl.project13.maven</groupId>
@@ -773,7 +759,6 @@
                         </gitDescribe>
                     </configuration>
                 </plugin>
-
                 <!-- Packaging types / tools -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -853,7 +838,6 @@
                         </dependency>
                     </dependencies>
                 </plugin>
-
                 <!-- Site -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -902,7 +886,6 @@
                         </dependency>
                     </dependencies>
                 </plugin>
-
                 <!-- Report Only -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -994,7 +977,32 @@
                     <artifactId>versions-maven-plugin</artifactId>
                     <version>${versions.plugin}</version>
                 </plugin>
-
+                <plugin>
+                    <groupId>com.rudikershaw.gitbuildhook</groupId>
+                    <artifactId>git-build-hook-maven-plugin</artifactId>
+                    <version>${git-build-hook-plugin.version}</version>
+                    <configuration>
+                        <installHooks>
+                            <commit-msg>hooks/commit-msg</commit-msg>
+                            <pre-commit>hooks/pre-commit</pre-commit>
+                        </installHooks>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>cn.yusiwen</groupId>
+                            <artifactId>maven-build-helper</artifactId>
+                            <version>${maven-build-helper.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <executions>
+                        <execution>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>install</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
             </plugins>
         </pluginManagement>
         <extensions>
@@ -1005,7 +1013,6 @@
             </extension>
         </extensions>
     </build>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -1107,7 +1114,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
     <dependencies>
         <dependency>
             <groupId>com.github.spotbugs</groupId>
@@ -1124,7 +1130,6 @@
             <version>${lombok.version}</version>
         </dependency>
     </dependencies>
-
     <reporting>
         <plugins>
             <plugin>
@@ -1215,7 +1220,6 @@
             </plugin>
         </plugins>
     </reporting>
-
     <profiles>
         <profile>
             <id>jar</id>
@@ -1654,7 +1658,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1667,7 +1671,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1680,7 +1684,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1693,7 +1697,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1706,7 +1710,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1735,7 +1739,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1748,7 +1752,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                     </pluginExecutions>
