@@ -137,7 +137,7 @@
         <impsort.plugin>1.7.0</impsort.plugin>
         <license.plugin>4.1</license.plugin>
         <license-git.version>4.1</license-git.version>
-        <tidy.plugin>1.1.0</tidy.plugin>
+        <tidy.plugin>1.2.0</tidy.plugin>
         <whitespace.plugin>1.0.5</whitespace.plugin>
         <xml-format.plugin>3.2.1</xml-format.plugin>
         <!-- others -->
