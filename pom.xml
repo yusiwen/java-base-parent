@@ -143,7 +143,7 @@
         <!-- others -->
         <enforcer.plugin>3.1.0</enforcer.plugin>
         <flyway-maven-plugin.version>9.3.1</flyway-maven-plugin.version>
-        <htmlcompressor.plugin>1.7.3</htmlcompressor.plugin>
+        <htmlcompressor.plugin>1.8.0</htmlcompressor.plugin>
         <htmlcompressor.version>1.8.0</htmlcompressor.version>
         <wagon.plugin>2.0.2</wagon.plugin>
         <wagon-ssh.version>3.5.2</wagon-ssh.version>
