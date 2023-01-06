@@ -146,7 +146,7 @@
         <htmlcompressor.plugin>1.8.0</htmlcompressor.plugin>
         <htmlcompressor.version>1.8.0</htmlcompressor.version>
         <wagon.plugin>2.0.2</wagon.plugin>
-        <wagon-ssh.version>3.5.2</wagon-ssh.version>
+        <wagon-ssh.version>3.5.3</wagon-ssh.version>
         <yuicompressor.plugin>1.5.1</yuicompressor.plugin>
         <yuicompressor.version>2.4.8</yuicompressor.version>
 
