@@ -139,7 +139,7 @@
         <license-git.version>4.1</license-git.version>
         <tidy.plugin>1.1.0</tidy.plugin>
         <whitespace.plugin>1.0.5</whitespace.plugin>
-        <xml-format.plugin>3.2.1</xml-format.plugin>
+        <xml-format.plugin>3.2.2</xml-format.plugin>
         <!-- others -->
         <enforcer.plugin>3.1.0</enforcer.plugin>
         <flyway-maven-plugin.version>9.3.1</flyway-maven-plugin.version>
