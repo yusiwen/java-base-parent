@@ -88,7 +88,7 @@
         <maven-javadoc-plugin.version>3.4.1</maven-javadoc-plugin.version> <!-- 文档打包插件 -->
         <maven-deploy-plugin.version>3.0.0</maven-deploy-plugin.version> <!-- 部署插件 -->
         <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version> <!-- GPG 签名插件 -->
-        <maven-release-plugin.version>3.0.0-M6</maven-release-plugin.version> <!-- 发布插件 -->
+        <maven-release-plugin.version>3.0.0-M7</maven-release-plugin.version> <!-- 发布插件 -->
         <maven-war-plugin.version>3.2.2</maven-war-plugin.version> <!-- war打包插件 -->
         <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version> <!-- 依赖插件 -->
         <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version> <!-- clean插件 -->
@@ -128,7 +128,7 @@
         <versions.plugin>2.12.0</versions.plugin>
         <!-- build -->
         <antrun-plugin.version>3.1.0</antrun-plugin.version>
-        <docker-maven-plugin.version>0.40.2</docker-maven-plugin.version>
+        <docker-maven-plugin.version>0.40.3</docker-maven-plugin.version>
         <git-commit.plugin>4.9.10</git-commit.plugin>
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
         <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
@@ -146,12 +146,12 @@
         <htmlcompressor.plugin>1.8.0</htmlcompressor.plugin>
         <htmlcompressor.version>1.8.0</htmlcompressor.version>
         <wagon.plugin>2.0.2</wagon.plugin>
-        <wagon-ssh.version>3.5.2</wagon-ssh.version>
+        <wagon-ssh.version>3.5.3</wagon-ssh.version>
         <yuicompressor.plugin>1.5.1</yuicompressor.plugin>
         <yuicompressor.version>2.4.8</yuicompressor.version>
 
         <!-- Spring boot plugin -->
-        <spring-boot-maven-plugin.version>2.7.4</spring-boot-maven-plugin.version>
+        <spring-boot-maven-plugin.version>2.7.7</spring-boot-maven-plugin.version>
         <spring-boot-jar-name>${project.name}-${project.version}</spring-boot-jar-name>
 
         <!-- Logging -->
