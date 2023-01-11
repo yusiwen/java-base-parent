@@ -80,7 +80,7 @@
         <!-- checks -->
         <error-prone.version>2.18.0</error-prone.version>
         <modernizer.plugin>2.5.0</modernizer.plugin>
-        <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version>
+        <maven-checkstyle-plugin.version>3.2.1</maven-checkstyle-plugin.version>
         <!--checkstyle check插件 -->
         <checkstyle.version>10.6.0</checkstyle.version>
         <findsecbugs.version>1.12.0</findsecbugs.version>
