@@ -70,6 +70,7 @@
         <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
+        <maven-assembly-plugin.version>3.4.2</maven-assembly-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.4.1</maven-javadoc-plugin.version>
         <maven-deploy-plugin.version>3.0.0</maven-deploy-plugin.version>
@@ -198,7 +199,7 @@
                             <!--suppress UnresolvedMavenProperty -->
                             <configLocation>checkstyle.xml</configLocation>
                             <includeTestSourceDirectory>false</includeTestSourceDirectory>
-                            <encoding>UTF-8</encoding>
+                            <inputEncoding>UTF-8</inputEncoding>
                             <consoleOutput>true</consoleOutput>
                             <failOnViolation>true</failOnViolation>
                             <failsOnError>true</failsOnError>
@@ -781,6 +782,16 @@
                             </manifestEntries>
                         </archive>
                         <skipIfEmpty>true</skipIfEmpty>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${maven-assembly-plugin.version}</version>
+                    <configuration>
+                        <descriptorRefs>
+                            <descriptorRef>jar-with-dependencies</descriptorRef>
+                        </descriptorRefs>
                     </configuration>
                 </plugin>
                 <plugin>
