@@ -138,7 +138,7 @@
         <!-- git -->
         <git-build-hook-plugin.version>3.3.0</git-build-hook-plugin.version>
         <!-- Spring boot plugin -->
-        <spring-boot-maven-plugin.version>2.7.7</spring-boot-maven-plugin.version>
+        <spring-boot-maven-plugin.version>2.7.8</spring-boot-maven-plugin.version>
         <spring-boot-jar-name>${project.name}-${project.version}</spring-boot-jar-name>
         <!-- Logging -->
         <log4j2.version>2.19.0</log4j2.version>
