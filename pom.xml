@@ -147,7 +147,7 @@
         <!-- Lombok -->
         <lombok.version>1.18.26</lombok.version>
         <!-- Hutool -->
-        <hutool.version>5.8.11</hutool.version>
+        <hutool.version>5.8.12</hutool.version>
         <!-- Guava -->
         <guava.version>31.1-jre</guava.version>
     </properties>
