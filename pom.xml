@@ -136,7 +136,7 @@
         <yuicompressor.plugin>1.5.1</yuicompressor.plugin>
         <yuicompressor.version>2.4.8</yuicompressor.version>
         <!-- git -->
-        <git-build-hook-plugin.version>3.3.0</git-build-hook-plugin.version>
+        <git-build-hook-plugin.version>3.4.1</git-build-hook-plugin.version>
         <!-- Spring boot plugin -->
         <spring-boot-maven-plugin.version>2.7.9</spring-boot-maven-plugin.version>
         <spring-boot-jar-name>${project.name}-${project.version}</spring-boot-jar-name>
