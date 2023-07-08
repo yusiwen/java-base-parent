@@ -83,7 +83,7 @@
         <modernizer.plugin>2.5.0</modernizer.plugin>
         <maven-checkstyle-plugin.version>3.2.1</maven-checkstyle-plugin.version>
         <!--checkstyle check插件 -->
-        <checkstyle.version>10.7.0</checkstyle.version>
+        <checkstyle.version>10.12.1</checkstyle.version>
         <findsecbugs.version>1.12.0</findsecbugs.version>
         <sb-contrib.version>7.4.7</sb-contrib.version>
         <bug-pattern.version>1.5.0</bug-pattern.version>
