@@ -94,7 +94,7 @@
         <p3c-pmd.version>2.1.1</p3c-pmd.version>
         <build-helper-maven-plugin.version>3.3.0</build-helper-maven-plugin.version>
         <maven-build-helper.version>1.5.0</maven-build-helper.version>
-        <jacoco.version>0.8.8</jacoco.version>
+        <jacoco.version>0.8.11</jacoco.version>
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
         <!-- test -->
         <surefire.plugin>3.0.0</surefire.plugin>
