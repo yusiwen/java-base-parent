@@ -90,7 +90,7 @@
         <spotbugs-maven-plugin.version>4.7.3.5</spotbugs-maven-plugin.version>
         <spotbugs.version>4.7.3</spotbugs.version>
         <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
-        <maven-pmd-plugin.version>3.12.0</maven-pmd-plugin.version>
+        <maven-pmd-plugin.version>3.21.2</maven-pmd-plugin.version>
         <p3c-pmd.version>2.1.1</p3c-pmd.version>
         <build-helper-maven-plugin.version>3.3.0</build-helper-maven-plugin.version>
         <maven-build-helper.version>1.5.0</maven-build-helper.version>
