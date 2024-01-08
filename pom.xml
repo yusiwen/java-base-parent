@@ -142,7 +142,7 @@
         <spring-boot-jar-name>${project.name}-${project.version}</spring-boot-jar-name>
         <!-- Logging -->
         <log4j2.version>2.20.0</log4j2.version>
-        <slf4j.version>1.7.36</slf4j.version>
+        <slf4j.version>2.0.11</slf4j.version>
         <logback.version>1.2.11</logback.version>
         <!-- Lombok -->
         <lombok.version>1.18.26</lombok.version>
