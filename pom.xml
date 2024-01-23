@@ -142,8 +142,8 @@
         <spring-boot-maven-plugin.version>2.7.18</spring-boot-maven-plugin.version>
         <spring-boot-jar-name>${project.name}-${project.version}</spring-boot-jar-name>
         <!-- Logging -->
-        <log4j2.version>2.20.0</log4j2.version>
-        <slf4j.version>1.7.36</slf4j.version>
+        <log4j2.version>2.22.1</log4j2.version>
+        <slf4j.version>2.0.11</slf4j.version>
         <logback.version>1.4.14</logback.version>
         <!-- Lombok -->
         <lombok.version>1.18.30</lombok.version>
@@ -1091,6 +1091,11 @@
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-reload4j</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-nop</artifactId>
                 <version>${slf4j.version}</version>
             </dependency>
@@ -1695,7 +1700,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1708,7 +1713,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1721,7 +1726,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1734,7 +1739,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1747,7 +1752,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1776,7 +1781,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1789,7 +1794,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                     </pluginExecutions>
