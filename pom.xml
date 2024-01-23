@@ -19,7 +19,7 @@
         <connection>scm:git:ssh://git@github.com/yusiwen/java-base-parent.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/yusiwen/java-base-parent.git</developerConnection>
         <url>https://github.com/yusiwen/java-base-parent</url>
-        <tag>v15.3</tag>
+        <tag>v15.5</tag>
     </scm>
     <developers>
         <developer>
