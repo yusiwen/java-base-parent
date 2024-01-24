@@ -123,7 +123,7 @@
         <formatter.plugin>2.22.0</formatter.plugin>
         <impsort.plugin>1.9.0</impsort.plugin>
         <license.plugin>4.1</license.plugin>
-        <license-git.version>4.1</license-git.version>
+        <license-git.version>4.3</license-git.version>
         <tidy.plugin>1.2.0</tidy.plugin>
         <whitespace.plugin>1.0.5</whitespace.plugin>
         <xml-format.plugin>3.2.2</xml-format.plugin>
