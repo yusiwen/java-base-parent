@@ -64,7 +64,7 @@
         <docker.build.name>${project.groupId}.${project.artifactId}:${project.version}-${build.environment}</docker.build.name>
         <docker.image.skip>true</docker.image.skip>
         <!-- Maven plugins -->
-        <animal-sniffer.plugin>1.22</animal-sniffer.plugin>
+        <animal-sniffer.plugin>1.23</animal-sniffer.plugin>
         <dependency-check-maven.version>8.1.2</dependency-check-maven.version>
         <directory-maven-plugin.version>1.0</directory-maven-plugin.version>
         <exec-maven-plugin.version>3.1.1</exec-maven-plugin.version>
