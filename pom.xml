@@ -131,7 +131,7 @@
         <enforcer.plugin>3.4.1</enforcer.plugin>
         <flyway-maven-plugin.version>9.15.2</flyway-maven-plugin.version>
         <htmlcompressor.plugin>1.9.2.1</htmlcompressor.plugin>
-        <htmlcompressor.version>1.9.2</htmlcompressor.version>
+        <htmlcompressor.version>2.0.0</htmlcompressor.version>
         <wagon.plugin>2.0.2</wagon.plugin>
         <wagon-ssh.version>3.5.3</wagon-ssh.version>
         <yuicompressor.plugin>1.5.1</yuicompressor.plugin>
