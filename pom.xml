@@ -110,7 +110,7 @@
         <javancss.plugin>2.1</javancss.plugin>
         <jdepend.plugin>2.0</jdepend.plugin>
         <maven-jxr-plugin.version>3.3.2</maven-jxr-plugin.version>
-        <project-info.plugin>3.4.5</project-info.plugin>
+        <project-info.plugin>3.5.0</project-info.plugin>
         <taglist.plugin>3.0.0</taglist.plugin>
         <versions.plugin>2.15.0</versions.plugin>
         <!-- build -->
