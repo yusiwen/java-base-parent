@@ -120,7 +120,7 @@
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
         <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
         <!-- format -->
-        <formatter.plugin>2.23.0</formatter.plugin>
+        <formatter.plugin>2.24.1</formatter.plugin>
         <impsort.plugin>1.12.0</impsort.plugin>
         <license.plugin>4.6</license.plugin>
         <license-git.version>4.3</license-git.version>
