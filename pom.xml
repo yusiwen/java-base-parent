@@ -139,7 +139,7 @@
         <!-- git -->
         <git-build-hook-plugin.version>3.5.0</git-build-hook-plugin.version>
         <!-- Spring boot plugin -->
-        <spring-boot-maven-plugin.version>3.2.2</spring-boot-maven-plugin.version>
+        <spring-boot-maven-plugin.version>3.4.5</spring-boot-maven-plugin.version>
         <spring-boot-jar-name>${project.name}-${project.version}</spring-boot-jar-name>
     </properties>
     <build>
