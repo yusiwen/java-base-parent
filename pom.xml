@@ -100,7 +100,7 @@
         <!-- test -->
         <surefire.plugin>3.5.3</surefire.plugin>
         <!-- site -->
-        <doxia.version>1.12.0</doxia.version>
+        <doxia.version>2.0.0</doxia.version>
         <fluido.version>1.12.0</fluido.version>
         <site.plugin>3.21.0</site.plugin>
         <wagon-git.version>2.0.4</wagon-git.version>
