@@ -96,7 +96,7 @@
         <build-helper-maven-plugin.version>3.6.0</build-helper-maven-plugin.version>
         <maven-build-helper.version>1.5.1</maven-build-helper.version>
         <jacoco.version>0.8.12</jacoco.version>
-        <sonar-maven-plugin.version>4.0.0.4121</sonar-maven-plugin.version>
+        <sonar-maven-plugin.version>5.1.0.4751</sonar-maven-plugin.version>
         <!-- test -->
         <surefire.plugin>3.5.3</surefire.plugin>
         <!-- site -->
