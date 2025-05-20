@@ -80,7 +80,7 @@
         <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
         <maven-clean-plugin.version>3.4.1</maven-clean-plugin.version>
         <!-- checks -->
-        <error-prone.version>2.34.0</error-prone.version>
+        <error-prone.version>2.38.0</error-prone.version>
         <modernizer.plugin>3.1.0</modernizer.plugin>
         <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
         <!--checkstyle check插件 -->
