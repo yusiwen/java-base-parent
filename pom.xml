@@ -1414,6 +1414,7 @@
                 <checkstyle.version>9.3</checkstyle.version>
                 <formatter.plugin>2.16.0</formatter.plugin>
                 <impsort.plugin>1.6.2</impsort.plugin>
+                <flyway-maven-plugin.version>9.22.3</flyway-maven-plugin.version>
             </properties>
         </profile>
         <profile>
