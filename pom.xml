@@ -78,6 +78,7 @@
         <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
         <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
         <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
+        <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
         <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
         <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
         <maven-clean-plugin.version>3.4.1</maven-clean-plugin.version>
@@ -495,6 +496,15 @@
                         <scmCommentPrefix>release</scmCommentPrefix>
                         <scmDevelopmentCommitComment>@{prefix}: prepare for next development iteration</scmDevelopmentCommitComment>
                         <scmReleaseCommitComment>@{prefix}: release @{releaseLabel}</scmReleaseCommitComment>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>${central-publishing-maven-plugin.version}</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <publishingServerId>central-portal</publishingServerId>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -1209,6 +1219,10 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
                     </plugin>
                 </plugins>
             </build>
