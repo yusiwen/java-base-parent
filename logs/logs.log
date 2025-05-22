@@ -1,0 +1,79 @@
+2025-05-22 17:52:38  [ main:0 ] - [ WARN ]  setRootLoggerLevel: operation not supported
+2025-05-22 17:52:38  [ main:0 ] - [ WARN ]  The SLF4J binding actually used is not supported by Maven: org.slf4j.impl.Reload4jLoggerFactory
+2025-05-22 17:52:38  [ main:0 ] - [ WARN ]  Maven supported bindings are:
+2025-05-22 17:52:38  [ main:1 ] - [ WARN ]  (from jar:file:/Users/yusiwen/.sdkman/candidates/maven/3.9.9/lib/maven-embedder-3.9.9.jar!/META-INF/maven/slf4j-configuration.properties)
+- org.slf4j.impl.SimpleLoggerFactory
+- org.slf4j.impl.MavenSimpleLoggerFactory
+- ch.qos.logback.classic.LoggerContext
+- org.apache.logging.slf4j.Log4jLoggerFactory
+2025-05-22 17:52:38  [ main:3 ] - [ DEBUG ]  Configured jul-to-slf4j bridge for net.sourceforge.pmd
+2025-05-22 17:52:38  [ main:10 ] - [ DEBUG ]  Using language java+version:1.8
+2025-05-22 17:52:38  [ main:11 ] - [ DEBUG ]  Adding classpath entry: </Users/yusiwen/git/mine/java-base-parent/target/classes>
+2025-05-22 17:52:38  [ main:11 ] - [ DEBUG ]  Adding classpath entry: </Users/yusiwen/.m2/repository/com/github/spotbugs/spotbugs-annotations/4.9.3/spotbugs-annotations-4.9.3.jar>
+2025-05-22 17:52:38  [ main:11 ] - [ DEBUG ]  Adding classpath entry: </Users/yusiwen/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar>
+2025-05-22 17:52:38  [ main:11 ] - [ DEBUG ]  Adding classpath entry: </Users/yusiwen/.m2/repository/org/gaul/modernizer-maven-annotations/3.1.0/modernizer-maven-annotations-3.1.0.jar>
+2025-05-22 17:52:38  [ main:11 ] - [ DEBUG ]  Adding classpath entry: </Users/yusiwen/.m2/repository/com/github/spotbugs/spotbugs-annotations/4.9.3/spotbugs-annotations-4.9.3.jar>
+2025-05-22 17:52:38  [ main:11 ] - [ DEBUG ]  Adding classpath entry: </Users/yusiwen/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar>
+2025-05-22 17:52:38  [ main:11 ] - [ DEBUG ]  Adding classpath entry: </Users/yusiwen/.m2/repository/org/gaul/modernizer-maven-annotations/3.1.0/modernizer-maven-annotations-3.1.0.jar>
+2025-05-22 17:52:38  [ main:68 ] - [ DEBUG ]  Rules loaded from /Users/yusiwen/git/mine/java-base-parent/target/pmd/rulesets/001-ali-concurrent.xml:
+2025-05-22 17:52:38  [ main:68 ] - [ DEBUG ]  - ThreadPoolCreationRule (Java)
+2025-05-22 17:52:38  [ main:68 ] - [ DEBUG ]  - AvoidUseTimerRule (Java)
+2025-05-22 17:52:38  [ main:68 ] - [ DEBUG ]  - AvoidManuallyCreateThreadRule (Java)
+2025-05-22 17:52:38  [ main:68 ] - [ DEBUG ]  - ThreadShouldSetNameRule (Java)
+2025-05-22 17:52:38  [ main:68 ] - [ DEBUG ]  - AvoidCallStaticSimpleDateFormatRule (Java)
+2025-05-22 17:52:38  [ main:68 ] - [ DEBUG ]  - ThreadLocalShouldRemoveRule (Java)
+2025-05-22 17:52:38  [ main:68 ] - [ DEBUG ]  - AvoidConcurrentCompetitionRandomRule (Java)
+2025-05-22 17:52:38  [ main:68 ] - [ DEBUG ]  - CountDownShouldInFinallyRule (Java)
+2025-05-22 17:52:38  [ main:68 ] - [ DEBUG ]  - LockShouldWithTryFinallyRule (Java)
+2025-05-22 17:52:38  [ main:70 ] - [ DEBUG ]  Rules loaded from /Users/yusiwen/git/mine/java-base-parent/target/pmd/rulesets/002-ali-exception.xml:
+2025-05-22 17:52:38  [ main:70 ] - [ DEBUG ]  - MethodReturnWrapperTypeRule (Java)
+2025-05-22 17:52:38  [ main:70 ] - [ DEBUG ]  - AvoidReturnInFinallyRule (Java)
+2025-05-22 17:52:38  [ main:70 ] - [ DEBUG ]  - TransactionMustHaveRollbackRule (Java)
+2025-05-22 17:52:38  [ main:71 ] - [ DEBUG ]  Rules loaded from /Users/yusiwen/git/mine/java-base-parent/target/pmd/rulesets/003-ali-flowcontrol.xml:
+2025-05-22 17:52:38  [ main:71 ] - [ DEBUG ]  - SwitchStatementRule (Java)
+2025-05-22 17:52:38  [ main:71 ] - [ DEBUG ]  - SwitchExpressionRule (Java)
+2025-05-22 17:52:38  [ main:71 ] - [ DEBUG ]  - NeedBraceRule (Java)
+2025-05-22 17:52:38  [ main:71 ] - [ DEBUG ]  - AvoidComplexConditionRule (Java)
+2025-05-22 17:52:38  [ main:71 ] - [ DEBUG ]  - AvoidNegationOperatorRule (Java)
+2025-05-22 17:52:38  [ main:73 ] - [ DEBUG ]  Rules loaded from /Users/yusiwen/git/mine/java-base-parent/target/pmd/rulesets/004-ali-naming.xml:
+2025-05-22 17:52:38  [ main:73 ] - [ DEBUG ]  - ClassNamingShouldBeCamelRule (Java)
+2025-05-22 17:52:38  [ main:73 ] - [ DEBUG ]  - AbstractClassShouldStartWithAbstractNamingRule (Java)
+2025-05-22 17:52:38  [ main:73 ] - [ DEBUG ]  - ExceptionClassShouldEndWithExceptionRule (Java)
+2025-05-22 17:52:38  [ main:73 ] - [ DEBUG ]  - TestClassShouldEndWithTestNamingRule (Java)
+2025-05-22 17:52:38  [ main:73 ] - [ DEBUG ]  - LowerCamelCaseVariableNamingRule (Java)
+2025-05-22 17:52:38  [ main:73 ] - [ DEBUG ]  - AvoidStartWithDollarAndUnderLineNamingRule (Java)
+2025-05-22 17:52:38  [ main:73 ] - [ DEBUG ]  - ConstantFieldShouldBeUpperCaseRule (Java)
+2025-05-22 17:52:38  [ main:73 ] - [ DEBUG ]  - ServiceOrDaoClassShouldEndWithImplRule (Java)
+2025-05-22 17:52:38  [ main:73 ] - [ DEBUG ]  - PackageNamingRule (Java)
+2025-05-22 17:52:38  [ main:73 ] - [ DEBUG ]  - BooleanPropertyShouldNotStartWithIsRule (Java)
+2025-05-22 17:52:38  [ main:73 ] - [ DEBUG ]  - ArrayNamingShouldHaveBracketRule (Java)
+2025-05-22 17:52:38  [ main:74 ] - [ DEBUG ]  Rules loaded from /Users/yusiwen/git/mine/java-base-parent/target/pmd/rulesets/005-ali-oop.xml:
+2025-05-22 17:52:38  [ main:75 ] - [ DEBUG ]  - EqualsAvoidNullRule (Java)
+2025-05-22 17:52:38  [ main:75 ] - [ DEBUG ]  - WrapperTypeEqualityRule (Java)
+2025-05-22 17:52:38  [ main:75 ] - [ DEBUG ]  - PojoMustUsePrimitiveFieldRule (Java)
+2025-05-22 17:52:38  [ main:75 ] - [ DEBUG ]  - PojoNoDefaultValueRule (Java)
+2025-05-22 17:52:38  [ main:75 ] - [ DEBUG ]  - PojoMustOverrideToStringRule (Java)
+2025-05-22 17:52:38  [ main:75 ] - [ DEBUG ]  - StringConcatRule (Java)
+2025-05-22 17:52:38  [ main:75 ] - [ DEBUG ]  - BigDecimalAvoidDoubleConstructorRule (Java)
+2025-05-22 17:52:38  [ main:75 ] - [ DEBUG ]  Rules loaded from /Users/yusiwen/git/mine/java-base-parent/target/pmd/rulesets/006-ali-orm.xml:
+2025-05-22 17:52:38  [ main:76 ] - [ DEBUG ]  - IbatisMethodQueryForListRule (Java)
+2025-05-22 17:52:38  [ main:77 ] - [ DEBUG ]  Rules loaded from /Users/yusiwen/git/mine/java-base-parent/target/pmd/rulesets/007-ali-other.xml:
+2025-05-22 17:52:38  [ main:77 ] - [ DEBUG ]  - AvoidPatternCompileInMethodRule (Java)
+2025-05-22 17:52:38  [ main:77 ] - [ DEBUG ]  - AvoidApacheBeanUtilsCopyRule (Java)
+2025-05-22 17:52:38  [ main:77 ] - [ DEBUG ]  - AvoidNewDateGetTimeRule (Java)
+2025-05-22 17:52:38  [ main:77 ] - [ DEBUG ]  - AvoidMissUseOfMathRandomRule (Java)
+2025-05-22 17:52:38  [ main:77 ] - [ DEBUG ]  - MethodTooLongRule (Java)
+2025-05-22 17:52:38  [ main:77 ] - [ DEBUG ]  - UseRightCaseForDateFormatRule (Java)
+2025-05-22 17:52:38  [ main:77 ] - [ DEBUG ]  - AvoidDoubleOrFloatEqualCompareRule (Java)
+2025-05-22 17:52:38  [ main:78 ] - [ DEBUG ]  Rules loaded from /Users/yusiwen/git/mine/java-base-parent/target/pmd/rulesets/008-ali-set.xml:
+2025-05-22 17:52:38  [ main:78 ] - [ DEBUG ]  - ClassCastExceptionWithToArrayRule (Java)
+2025-05-22 17:52:38  [ main:78 ] - [ DEBUG ]  - UnsupportedExceptionWithModifyAsListRule (Java)
+2025-05-22 17:52:38  [ main:78 ] - [ DEBUG ]  - ClassCastExceptionWithSubListToArrayListRule (Java)
+2025-05-22 17:52:38  [ main:78 ] - [ DEBUG ]  - ConcurrentExceptionWithModifyOriginSubListRule (Java)
+2025-05-22 17:52:38  [ main:78 ] - [ DEBUG ]  - DontModifyInForeachCircleRule (Java)
+2025-05-22 17:52:38  [ main:78 ] - [ DEBUG ]  - CollectionInitShouldAssignCapacityRule (Java)
+2025-05-22 17:52:38  [ main:78 ] - [ DEBUG ]  Executing PMD...
+2025-05-22 17:52:38  [ main:83 ] - [ DEBUG ]  PMD finished. Found 0 violations.
+2025-05-22 17:52:38  [ main:83 ] - [ DEBUG ]  Removing excluded violations. Using 0 configured exclusions.
+2025-05-22 17:52:38  [ main:83 ] - [ DEBUG ]  Excluded 0 violations.
+2025-05-22 17:52:38  [ main:84 ] - [ DEBUG ]  Target PMD output file: /Users/yusiwen/git/mine/java-base-parent/target/pmd.xml
