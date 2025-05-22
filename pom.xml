@@ -45,10 +45,11 @@
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
         <!-- Default JDK version -->
         <java.version>1.8</java.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.testSource>1.8</maven.compiler.testSource>
-        <maven.compiler.testTarget>1.8</maven.compiler.testTarget>
+        <toolchain.jdk.version>[17,)</toolchain.jdk.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.testSource>${java.version}</maven.compiler.testSource>
+        <maven.compiler.testTarget>${java.version}</maven.compiler.testTarget>
         <!-- Signature Settings -->
         <signature.artifact>java18</signature.artifact>
         <signature.version>1.0</signature.version>
@@ -68,6 +69,7 @@
         <dependency-check-maven.version>12.1.1</dependency-check-maven.version>
         <directory-maven-plugin.version>1.0</directory-maven-plugin.version>
         <exec-maven-plugin.version>3.5.0</exec-maven-plugin.version>
+        <maven-toolchains-plugin.version>3.2.0</maven-toolchains-plugin.version>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
         <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
@@ -84,7 +86,7 @@
         <modernizer.plugin>3.1.0</modernizer.plugin>
         <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
         <!--checkstyle check插件 -->
-        <checkstyle.version>10.24.0</checkstyle.version>
+        <checkstyle.version>10.23.1</checkstyle.version>
         <findsecbugs.version>1.14.0</findsecbugs.version>
         <sb-contrib.version>7.6.9</sb-contrib.version>
         <bug-pattern.version>1.5.0</bug-pattern.version>
@@ -92,7 +94,7 @@
         <spotbugs.version>4.9.3</spotbugs.version>
         <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
         <maven-pmd-plugin.version>3.21.2</maven-pmd-plugin.version>
-        <p3c-pmd.version>2.1.1</p3c-pmd.version>
+        <p3c-pmd.version>2.2.1.0x</p3c-pmd.version>
         <build-helper-maven-plugin.version>3.6.0</build-helper-maven-plugin.version>
         <maven-build-helper.version>1.5.1</maven-build-helper.version>
         <jacoco.version>0.8.13</jacoco.version>
@@ -147,9 +149,8 @@
         <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
             <plugin>
-                <groupId>cn.yusiwen.maven.plugins</groupId>
-                <artifactId>utility-maven-plugin</artifactId>
-                <version>${utility.version}</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-toolchains-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.commonjava.maven.plugins</groupId>
@@ -174,142 +175,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${maven-checkstyle-plugin.version}</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.puppycrawl.tools</groupId>
-                        <artifactId>checkstyle</artifactId>
-                        <version>${checkstyle.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>cn.yusiwen</groupId>
-                        <artifactId>maven-build-helper</artifactId>
-                        <version>${maven-build-helper.version}</version>
-                    </dependency>
-                </dependencies>
-                <executions>
-                    <execution>
-                        <id>checkstyle-validation</id>
-                        <phase>compile</phase>
-                        <configuration>
-                            <violationSeverity>warn</violationSeverity>
-                            <!--suppress UnresolvedMavenProperty -->
-                            <configLocation>checkstyle.xml</configLocation>
-                            <includeTestSourceDirectory>false</includeTestSourceDirectory>
-                            <inputEncoding>UTF-8</inputEncoding>
-                            <consoleOutput>true</consoleOutput>
-                            <failOnViolation>true</failOnViolation>
-                            <failsOnError>true</failsOnError>
-                            <excludes>**/enums/*Enum.java,**/Launcher.java,**/*Application.java</excludes>
-                        </configuration>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>${maven-pmd-plugin.version}</version>
-                <configuration>
-                    <linkXRef>false</linkXRef>
-                    <aggregate>true</aggregate>
-                    <inputEncoding>${project.build.sourceEncoding}</inputEncoding>
-                    <targetJdk>${java.version}</targetJdk>
-                    <printFailingErrors>true</printFailingErrors>
-                    <failurePriority>2</failurePriority>
-                    <rulesets>
-                        <!--由checkstyle检查 <ruleset>rulesets/java/ali-comment.xml</ruleset>-->
-                        <ruleset>rulesets/java/ali-concurrent.xml</ruleset>
-                        <!--由checkstyle检查 <ruleset>rulesets/java/ali-constant.xml</ruleset>-->
-                        <ruleset>rulesets/java/ali-exception.xml</ruleset>
-                        <ruleset>rulesets/java/ali-flowcontrol.xml</ruleset>
-                        <ruleset>rulesets/java/ali-naming.xml</ruleset>
-                        <ruleset>rulesets/java/ali-oop.xml</ruleset>
-                        <ruleset>rulesets/java/ali-orm.xml</ruleset>
-                        <ruleset>rulesets/java/ali-other.xml</ruleset>
-                        <ruleset>rulesets/java/ali-set.xml</ruleset>
-                    </rulesets>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.alibaba.p3c</groupId>
-                        <artifactId>p3c-pmd</artifactId>
-                        <version>${p3c-pmd.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>commons-beanutils</groupId>
-                        <artifactId>commons-beanutils</artifactId>
-                        <version>1.10.1</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.dom4j</groupId>
-                        <artifactId>dom4j</artifactId>
-                        <version>2.1.4</version>
-                    </dependency>
-                </dependencies>
             </plugin>
-            <!-- findbugs插件 -->
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
-                <version>${spotbugs-maven-plugin.version}</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>cn.yusiwen</groupId>
-                        <artifactId>maven-build-helper</artifactId>
-                        <version>${maven-build-helper.version}</version>
-                    </dependency>
-                </dependencies>
-                <configuration>
-                    <!-- 设置分析工作的等级，可以为Min、Default和Max -->
-                    <effort>Max</effort>
-                    <!-- Low、Medium和High (Low最严格) -->
-                    <threshold>Medium</threshold>
-                    <!--发现错误则中断构建-->
-                    <failOnError>true</failOnError>
-                    <!--不检查test代码 -->
-                    <includeTests>false</includeTests>
-                    <!--findbugs需要忽略的错误的配置文件-->
-                    <!--suppress UnresolvedMavenProperty -->
-                    <excludeFilterFile>findbugs-exclude-filter.xml</excludeFilterFile>
-                    <plugins>
-                        <plugin>
-                            <groupId>com.mebigfatguy.sb-contrib</groupId>
-                            <artifactId>sb-contrib</artifactId>
-                            <version>${sb-contrib.version}</version>
-                        </plugin>
-                        <plugin>
-                            <groupId>com.h3xstream.findsecbugs</groupId>
-                            <artifactId>findsecbugs-plugin</artifactId>
-                            <version>${findsecbugs.version}</version>
-                        </plugin>
-                        <plugin>
-                            <groupId>jp.skypencil.findbugs.slf4j</groupId>
-                            <artifactId>bug-pattern</artifactId>
-                            <version>${bug-pattern.version}</version>
-                        </plugin>
-                    </plugins>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>run-findbugs</id>
-                        <!-- validate 阶段触发执行findbugs检查，比如执行 mvn clean package -->
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -358,6 +231,151 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>cn.yusiwen.maven.plugins</groupId>
+                    <artifactId>utility-maven-plugin</artifactId>
+                    <version>${utility.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>${maven-checkstyle-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.puppycrawl.tools</groupId>
+                            <artifactId>checkstyle</artifactId>
+                            <version>${checkstyle.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>cn.yusiwen</groupId>
+                            <artifactId>maven-build-helper</artifactId>
+                            <version>${maven-build-helper.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <executions>
+                        <execution>
+                            <id>checkstyle-validation</id>
+                            <phase>compile</phase>
+                            <configuration>
+                                <violationSeverity>warn</violationSeverity>
+                                <!--suppress UnresolvedMavenProperty -->
+                                <configLocation>checkstyle.xml</configLocation>
+                                <includeTestSourceDirectory>false</includeTestSourceDirectory>
+                                <inputEncoding>UTF-8</inputEncoding>
+                                <consoleOutput>true</consoleOutput>
+                                <failOnViolation>true</failOnViolation>
+                                <failsOnError>true</failsOnError>
+                                <excludes>**/enums/*Enum.java,**/Launcher.java,**/*Application.java</excludes>
+                            </configuration>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <version>${maven-pmd-plugin.version}</version>
+                    <configuration>
+                        <linkXRef>false</linkXRef>
+                        <aggregate>true</aggregate>
+                        <inputEncoding>${project.build.sourceEncoding}</inputEncoding>
+                        <targetJdk>${java.version}</targetJdk>
+                        <printFailingErrors>true</printFailingErrors>
+                        <failurePriority>2</failurePriority>
+                        <rulesets>
+                            <!--由checkstyle检查 <ruleset>rulesets/java/ali-comment.xml</ruleset>-->
+                            <ruleset>rulesets/java/ali-concurrent.xml</ruleset>
+                            <!--由checkstyle检查 <ruleset>rulesets/java/ali-constant.xml</ruleset>-->
+                            <ruleset>rulesets/java/ali-exception.xml</ruleset>
+                            <ruleset>rulesets/java/ali-flowcontrol.xml</ruleset>
+                            <ruleset>rulesets/java/ali-naming.xml</ruleset>
+                            <ruleset>rulesets/java/ali-oop.xml</ruleset>
+                            <ruleset>rulesets/java/ali-orm.xml</ruleset>
+                            <ruleset>rulesets/java/ali-other.xml</ruleset>
+                            <ruleset>rulesets/java/ali-set.xml</ruleset>
+                        </rulesets>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>compile</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.xenoamess.p3c</groupId>
+                            <artifactId>p3c-pmd</artifactId>
+                            <version>${p3c-pmd.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>commons-beanutils</groupId>
+                            <artifactId>commons-beanutils</artifactId>
+                            <version>1.10.1</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.dom4j</groupId>
+                            <artifactId>dom4j</artifactId>
+                            <version>2.1.4</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <!-- findbugs插件 -->
+                <plugin>
+                    <groupId>com.github.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <version>${spotbugs-maven-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>cn.yusiwen</groupId>
+                            <artifactId>maven-build-helper</artifactId>
+                            <version>${maven-build-helper.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <!-- 设置分析工作的等级，可以为Min、Default和Max -->
+                        <effort>Max</effort>
+                        <!-- Low、Medium和High (Low最严格) -->
+                        <threshold>Medium</threshold>
+                        <!--发现错误则中断构建-->
+                        <failOnError>true</failOnError>
+                        <!--不检查test代码 -->
+                        <includeTests>false</includeTests>
+                        <!--findbugs需要忽略的错误的配置文件-->
+                        <!--suppress UnresolvedMavenProperty -->
+                        <excludeFilterFile>findbugs-exclude-filter.xml</excludeFilterFile>
+                        <plugins>
+                            <plugin>
+                                <groupId>com.mebigfatguy.sb-contrib</groupId>
+                                <artifactId>sb-contrib</artifactId>
+                                <version>${sb-contrib.version}</version>
+                            </plugin>
+                            <plugin>
+                                <groupId>com.h3xstream.findsecbugs</groupId>
+                                <artifactId>findsecbugs-plugin</artifactId>
+                                <version>${findsecbugs.version}</version>
+                            </plugin>
+                            <plugin>
+                                <groupId>jp.skypencil.findbugs.slf4j</groupId>
+                                <artifactId>bug-pattern</artifactId>
+                                <version>${bug-pattern.version}</version>
+                            </plugin>
+                        </plugins>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>run-findbugs</id>
+                            <!-- validate 阶段触发执行findbugs检查，比如执行 mvn clean package -->
+                            <phase>compile</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${spring-boot-maven-plugin.version}</version>
@@ -381,6 +399,18 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
                     <version>${maven-install-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-toolchains-plugin</artifactId>
+                    <version>${maven-toolchains-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>select-jdk-toolchain</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
