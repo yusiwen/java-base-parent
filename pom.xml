@@ -136,6 +136,7 @@
         <wagon-ssh.version>3.5.3</wagon-ssh.version>
         <yuicompressor.plugin>1.5.1</yuicompressor.plugin>
         <yuicompressor.version>2.4.8</yuicompressor.version>
+        <utility.version>1.0.0.M1</utility.version>
         <!-- git -->
         <git-build-hook-plugin.version>3.5.0</git-build-hook-plugin.version>
         <!-- Spring boot plugin -->
@@ -145,6 +146,11 @@
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
+            <plugin>
+                <groupId>cn.yusiwen.maven.plugins</groupId>
+                <artifactId>utility-maven-plugin</artifactId>
+                <version>${utility.version}</version>
+            </plugin>
             <plugin>
                 <groupId>org.commonjava.maven.plugins</groupId>
                 <!-- 用来生成顶级模块的绝对路径properties,提供其他插件使用-->
@@ -209,7 +215,7 @@
                 <configuration>
                     <linkXRef>false</linkXRef>
                     <aggregate>true</aggregate>
-                    <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+                    <inputEncoding>${project.build.sourceEncoding}</inputEncoding>
                     <targetJdk>${java.version}</targetJdk>
                     <printFailingErrors>true</printFailingErrors>
                     <failurePriority>2</failurePriority>
@@ -357,7 +363,6 @@
                     <version>${spring-boot-maven-plugin.version}</version>
                     <configuration>
                         <finalName>${spring-boot-jar-name}</finalName>
-                        <fork>true</fork>
                     </configuration>
                     <executions>
                         <execution>
@@ -378,6 +383,7 @@
                     <version>${maven-install-plugin.version}</version>
                 </plugin>
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${maven-compiler-plugin.version}</version>
                     <configuration>
@@ -1454,7 +1460,7 @@
         <profile>
             <id>jdk9+</id>
             <activation>
-                <jdk>[9,18)</jdk>
+                <jdk>[9,)</jdk>
             </activation>
             <properties>
                 <!-- JAXB -->
