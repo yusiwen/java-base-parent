@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.yusiwen</groupId>
     <artifactId>java-base-parent</artifactId>
-    <version>17-SNAPSHOT</version>
+    <version>17</version>
     <packaging>pom</packaging>
     <name>java-base-parent</name>
     <description>Parent pom for java projects</description>
@@ -19,7 +19,7 @@
         <connection>scm:git:ssh://git@github.com/yusiwen/java-base-parent.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/yusiwen/java-base-parent.git</developerConnection>
         <url>https://github.com/yusiwen/java-base-parent</url>
-        <tag>HEAD</tag>
+        <tag>v17</tag>
     </scm>
     <developers>
         <developer>
@@ -1654,7 +1654,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore/>
+                                                <ignore />
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1667,7 +1667,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore/>
+                                                <ignore />
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1680,7 +1680,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore/>
+                                                <ignore />
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1693,7 +1693,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore/>
+                                                <ignore />
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1706,7 +1706,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore/>
+                                                <ignore />
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1735,7 +1735,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore/>
+                                                <ignore />
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -1748,7 +1748,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore/>
+                                                <ignore />
                                             </action>
                                         </pluginExecution>
                                     </pluginExecutions>
