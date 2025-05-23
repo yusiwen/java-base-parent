@@ -139,7 +139,7 @@
         <wagon-ssh.version>3.5.3</wagon-ssh.version>
         <yuicompressor.plugin>1.5.1</yuicompressor.plugin>
         <yuicompressor.version>2.4.8</yuicompressor.version>
-        <utility.version>1.0.0.M3</utility.version>
+        <utility.version>1.0.0-SNAPSHOT</utility.version>
         <lombok.version>1.18.38</lombok.version>
         <!-- git -->
         <git-build-hook-plugin.version>3.5.0</git-build-hook-plugin.version>
@@ -311,16 +311,6 @@
                             <groupId>com.xenoamess.p3c</groupId>
                             <artifactId>p3c-pmd</artifactId>
                             <version>${p3c-pmd.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>commons-beanutils</groupId>
-                            <artifactId>commons-beanutils</artifactId>
-                            <version>1.10.1</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.dom4j</groupId>
-                            <artifactId>dom4j</artifactId>
-                            <version>2.1.4</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -1472,6 +1462,11 @@
                 <formatter.plugin>2.16.0</formatter.plugin>
                 <impsort.plugin>1.6.2</impsort.plugin>
                 <flyway-maven-plugin.version>9.22.3</flyway-maven-plugin.version>
+                <sonar-maven-plugin.version>3.11.0.3922</sonar-maven-plugin.version>
+                <dependency-check-maven.version>10.0.4</dependency-check-maven.version>
+                <license.plugin>4.6</license.plugin>
+                <license-git.version>4.6</license-git.version>
+                <htmlcompressor.plugin>1.7.3</htmlcompressor.plugin>
             </properties>
         </profile>
         <profile>
