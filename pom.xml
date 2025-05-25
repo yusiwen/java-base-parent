@@ -143,9 +143,6 @@
         <lombok.version>1.18.38</lombok.version>
         <!-- git -->
         <git-build-hook-plugin.version>3.5.0</git-build-hook-plugin.version>
-        <!-- Spring boot plugin -->
-        <spring-boot-maven-plugin.version>3.5.0</spring-boot-maven-plugin.version>
-        <spring-boot-jar-name>${project.name}-${project.version}</spring-boot-jar-name>
     </properties>
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
@@ -363,21 +360,6 @@
                             <phase>compile</phase>
                             <goals>
                                 <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring-boot-maven-plugin.version}</version>
-                    <configuration>
-                        <finalName>${spring-boot-jar-name}</finalName>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>repackage</goal>
                             </goals>
                         </execution>
                     </executions>
@@ -951,7 +933,7 @@
                     <version>${javancss.plugin}</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
+                    <groupId>org.codehus.mojo</groupId>
                     <artifactId>jdepend-maven-plugin</artifactId>
                     <version>${jdepend.plugin}</version>
                 </plugin>
