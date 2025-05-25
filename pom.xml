@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.yusiwen</groupId>
     <artifactId>java-base-parent</artifactId>
-    <version>18</version>
+    <version>19-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>java-base-parent</name>
     <description>Parent pom for java projects</description>
@@ -19,7 +19,7 @@
         <connection>scm:git:ssh://git@github.com/yusiwen/java-base-parent.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/yusiwen/java-base-parent.git</developerConnection>
         <url>https://github.com/yusiwen/java-base-parent</url>
-        <tag>v18</tag>
+        <tag>HEAD</tag>
     </scm>
     <developers>
         <developer>
