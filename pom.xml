@@ -128,7 +128,7 @@
         <license.plugin>5.0.0</license.plugin>
         <license-git.version>5.0.0</license-git.version>
         <tidy.plugin>1.4.0</tidy.plugin>
-        <whitespace.plugin>1.0.5</whitespace.plugin>
+        <whitespace.plugin>1.5.0</whitespace.plugin>
         <xml-format.plugin>4.1.0</xml-format.plugin>
         <!-- others -->
         <enforcer.plugin>3.5.0</enforcer.plugin>
@@ -709,7 +709,7 @@
                     </configuration>
                 </plugin>
                 <plugin>
-                    <groupId>cn.yusiwen</groupId>
+                    <groupId>com.github.hazendaz.maven</groupId>
                     <artifactId>whitespace-maven-plugin</artifactId>
                     <version>${whitespace.plugin}</version>
                 </plugin>
@@ -1319,7 +1319,7 @@
                         </executions>
                     </plugin>
                     <plugin>
-                        <groupId>cn.yusiwen</groupId>
+                        <groupId>com.github.hazendaz.maven</groupId>
                         <artifactId>whitespace-maven-plugin</artifactId>
                         <executions>
                             <execution>
@@ -1711,7 +1711,7 @@
                                             <pluginExecutionFilter>
                                                 <groupId>cn.yusiwen</groupId>
                                                 <artifactId>whitespace-maven-plugin</artifactId>
-                                                <versionRange>[1.0.5,)</versionRange>
+                                                <versionRange>[1.5.0,)</versionRange>
                                                 <goals>
                                                     <goal>trim</goal>
                                                 </goals>
