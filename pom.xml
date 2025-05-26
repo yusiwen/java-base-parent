@@ -140,7 +140,7 @@
         <tidy.plugin>1.4.0</tidy.plugin>
         <whitespace.plugin>1.5.0</whitespace.plugin>
         <xml-format.plugin>4.1.0</xml-format.plugin>
-        <rewrite.plugin>6.7.0</rewrite.plugin>
+        <rewrite.plugin>6.9.0</rewrite.plugin>
         <!-- others -->
         <bnd.version>7.1.0</bnd.version>
         <bnd.plugin>7.1.0</bnd.plugin>
