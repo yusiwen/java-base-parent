@@ -61,6 +61,12 @@
         <indent.size>4</indent.size>
         <!-- Build -->
         <build.environment>dev</build.environment>
+        <!-- OSGi configuration properties -->
+        <osgi.symbolicName>${project.groupId}.${project.artifactId}</osgi.symbolicName>
+        <osgi.export>${project.groupId}.*;version=${project.version};-noimport:=true</osgi.export>
+        <osgi.import>*</osgi.import>
+        <osgi.dynamicImport />
+        <osgi.private />
         <!-- Docker build -->
         <docker.build.name>${project.groupId}.${project.artifactId}:${project.version}-${build.environment}</docker.build.name>
         <docker.image.skip>true</docker.image.skip>
