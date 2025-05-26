@@ -125,12 +125,15 @@
         <!-- format -->
         <formatter.plugin>2.26.0</formatter.plugin>
         <impsort.plugin>1.12.0</impsort.plugin>
-        <license.plugin>5.0.0</license.plugin>
-        <license-git.version>5.0.0</license-git.version>
+        <sortpom.plugin>4.0.0</sortpom.plugin>
         <tidy.plugin>1.4.0</tidy.plugin>
         <whitespace.plugin>1.5.0</whitespace.plugin>
         <xml-format.plugin>4.1.0</xml-format.plugin>
         <!-- others -->
+        <bnd.version>7.1.0</bnd.version>
+        <bnd.plugin>7.1.0</bnd.plugin>
+        <license.plugin>5.0.0</license.plugin>
+        <license-git.version>5.0.0</license-git.version>
         <enforcer.plugin>3.5.0</enforcer.plugin>
         <flyway-maven-plugin.version>11.8.2</flyway-maven-plugin.version>
         <htmlcompressor.plugin>2.2.0</htmlcompressor.plugin>
@@ -709,6 +712,19 @@
                     </configuration>
                 </plugin>
                 <plugin>
+                    <groupId>com.github.ekryd.sortpom</groupId>
+                    <artifactId>sortpom-maven-plugin</artifactId>
+                    <version>${sortpom.plugin}</version>
+                    <configuration>
+                        <predefinedSortOrder>recommended_2008_06</predefinedSortOrder>
+                        <createBackupFile>false</createBackupFile>
+                        <expandEmptyElements>false</expandEmptyElements>
+                        <keepBlankLines>true</keepBlankLines>
+                        <nrOfIndentSpace>2</nrOfIndentSpace>
+                        <spaceBeforeCloseEmptyElement>true</spaceBeforeCloseEmptyElement>
+                    </configuration>
+                </plugin>
+                <plugin>
                     <groupId>com.github.hazendaz.maven</groupId>
                     <artifactId>whitespace-maven-plugin</artifactId>
                     <version>${whitespace.plugin}</version>
@@ -721,6 +737,35 @@
                         <indentSize>${indent.size}</indentSize>
                         <lineLength>120</lineLength>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>biz.aQute.bnd</groupId>
+                    <artifactId>bnd-maven-plugin</artifactId>
+                    <version>${bnd.plugin}</version>
+                    <configuration>
+                        <manifestPath>${project.build.directory}/osgi/MANIFEST.MF</manifestPath>
+                        <packagingTypes>jar,bundle,maven-plugin,war</packagingTypes>
+                        <bnd><![CDATA[
+                            // 'nouses' stops the "uses" clauses being added to "Export-Package" manifest entry
+                            -nouses: true
+                            // 'removeheaders' Stop the JAVA_n_HOME variables from being treated as headers by Bnd if found in settings.xml (obsolete versions removed, if found, cleanup settings.xml)
+                            -removeheaders: JAVA_17_HOME,JAVA_21_HOME,JAVA_23_HOME,JAVA_24_HOME,JAVA_25_HOME
+                            Bundle-Developers:
+                            Bundle-DocURL: ${project.url}
+                            Bundle-SymbolicName: ${osgi.symbolicName}
+                            DynamicImport-Package: ${osgi.dynamicImport}
+                            Export-Package: ${osgi.export}
+                            Private-Package: ${osgi.private}
+                            Import-Package: ${osgi.import}
+                        ]]></bnd>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>biz.aQute.bnd</groupId>
+                            <artifactId>biz.aQute.bndlib</artifactId>
+                            <version>${bnd.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>com.mycila</groupId>
@@ -1319,6 +1364,18 @@
                         </executions>
                     </plugin>
                     <plugin>
+                        <groupId>com.github.ekryd.sortpom</groupId>
+                        <artifactId>sortpom-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>sort</goal>
+                                </goals>
+                                <phase>verify</phase>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
                         <groupId>com.github.hazendaz.maven</groupId>
                         <artifactId>whitespace-maven-plugin</artifactId>
                         <executions>
@@ -1345,26 +1402,41 @@
             </build>
         </profile>
         <profile>
-            <id>license-header</id>
+            <id>bundle</id>
             <activation>
-                <file>
-                    <exists>LICENSE_HEADER</exists>
-                </file>
+                <activeByDefault>false</activeByDefault>
             </activation>
-            <properties>
-                <license.header>LICENSE_HEADER</license.header>
-            </properties>
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>com.mycila</groupId>
-                        <artifactId>license-maven-plugin</artifactId>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
                         <executions>
                             <execution>
-                                <phase>compile</phase>
                                 <goals>
-                                    <goal>format</goal>
+                                    <goal>single</goal>
                                 </goals>
+                                <phase>package</phase>
+                                <configuration>
+                                    <attach>true</attach>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <descriptorRefs>
+                                        <descriptorRef>base-bundle</descriptorRef>
+                                    </descriptorRefs>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>biz.aQute.bnd</groupId>
+                        <artifactId>bnd-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>bnd-process</id>
+                                <goals>
+                                    <goal>bnd-process</goal>
+                                </goals>
+                                <phase>process-classes</phase>
                             </execution>
                         </executions>
                     </plugin>
@@ -1372,14 +1444,14 @@
             </build>
         </profile>
         <profile>
-            <id>license-txt</id>
+            <id>license</id>
             <activation>
                 <file>
-                    <exists>license.txt</exists>
+                    <exists>LICENSE_HEADER</exists>
                 </file>
             </activation>
             <properties>
-                <license.header>license.txt</license.header>
+                <license.header>LICENSE_HEADER</license.header>
             </properties>
             <build>
                 <plugins>
@@ -1711,7 +1783,7 @@
                                             <pluginExecutionFilter>
                                                 <groupId>cn.yusiwen</groupId>
                                                 <artifactId>whitespace-maven-plugin</artifactId>
-                                                <versionRange>[1.5.0,)</versionRange>
+                                                <versionRange>[${whitespace.plugin},)</versionRange>
                                                 <goals>
                                                     <goal>trim</goal>
                                                 </goals>
