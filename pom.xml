@@ -933,7 +933,7 @@
                     <version>${javancss.plugin}</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.codehus.mojo</groupId>
+                    <groupId>org.codehaus.mojo</groupId>
                     <artifactId>jdepend-maven-plugin</artifactId>
                     <version>${jdepend.plugin}</version>
                 </plugin>
