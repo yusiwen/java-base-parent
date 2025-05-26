@@ -38,18 +38,23 @@
     </ciManagement>
     <properties>
         <!-- Copyright -->
-        <copyright>2021-2024</copyright>
+        <copyright>2021-2025</copyright>
         <!-- Maven minimum version -->
         <maven.min-version>3.6.3</maven.min-version>
         <!-- Maven date configuration -->
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
         <!-- Default JDK version -->
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
+        <java.release.version>17</java.release.version>
+        <java.test.version>17</java.test.version>
+        <java.test.release.version>17</java.test.release.version>
         <toolchain.jdk.version>[17,)</toolchain.jdk.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <maven.compiler.testSource>${java.version}</maven.compiler.testSource>
-        <maven.compiler.testTarget>${java.version}</maven.compiler.testTarget>
+        <maven.compiler.testSource>${java.test.version}</maven.compiler.testSource>
+        <maven.compiler.testTarget>${java.test.version}</maven.compiler.testTarget>
+        <maven.compiler.release>${java.release.version}</maven.compiler.release>
+        <maven.compiler.testRelease>${java.test.release.version}</maven.compiler.testRelease>
         <!-- Signature Settings -->
         <signature.artifact>java18</signature.artifact>
         <signature.version>1.0</signature.version>
@@ -103,7 +108,7 @@
         <maven-pmd-plugin.version>3.21.2</maven-pmd-plugin.version>
         <p3c-pmd.version>2.2.1.0x</p3c-pmd.version>
         <build-helper-maven-plugin.version>3.6.0</build-helper-maven-plugin.version>
-        <maven-build-helper.version>1.5.3</maven-build-helper.version>
+        <maven-build-helper.version>1.5.4-SNAPSHOT</maven-build-helper.version>
         <jacoco.version>0.8.13</jacoco.version>
         <sonar-maven-plugin.version>5.1.0.4751</sonar-maven-plugin.version>
         <!-- test -->
@@ -798,6 +803,7 @@
                     <configuration>
                         <archive>
                             <manifest>
+                                <addBuildEnvironmentEntries>false</addBuildEnvironmentEntries>
                                 <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                                 <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                             </manifest>
@@ -811,6 +817,7 @@
                                 <Os-Version>${os.version}</Os-Version>
                                 <X-Compile-Source-JDK>${maven.compiler.source}</X-Compile-Source-JDK>
                                 <X-Compile-Target-JDK>${maven.compiler.target}</X-Compile-Target-JDK>
+                                <X-Compile-Release-JDK>${maven.compiler.release}</X-Compile-Release-JDK>
                             </manifestEntries>
                         </archive>
                         <skipIfEmpty>true</skipIfEmpty>
@@ -825,6 +832,13 @@
                             <descriptorRef>jar-with-dependencies</descriptorRef>
                         </descriptorRefs>
                     </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>cn.yusiwen</groupId>
+                            <artifactId>maven-build-helper</artifactId>
+                            <version>${maven-build-helper.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1433,19 +1447,6 @@
                                         <descriptorRef>base-bundle</descriptorRef>
                                     </descriptorRefs>
                                 </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>biz.aQute.bnd</groupId>
-                        <artifactId>bnd-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>bnd-process</id>
-                                <goals>
-                                    <goal>bnd-process</goal>
-                                </goals>
-                                <phase>process-classes</phase>
                             </execution>
                         </executions>
                     </plugin>
