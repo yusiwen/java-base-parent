@@ -77,7 +77,7 @@
         <docker.image.skip>true</docker.image.skip>
         <!-- Maven plugins -->
         <animal-sniffer.plugin>1.24</animal-sniffer.plugin>
-        <dependency-check-maven.version>12.1.1</dependency-check-maven.version>
+        <dependency-check-maven.version>12.1.2</dependency-check-maven.version>
         <directory-maven-plugin.version>1.0</directory-maven-plugin.version>
         <exec-maven-plugin.version>3.5.1</exec-maven-plugin.version>
         <maven-toolchains-plugin.version>3.2.0</maven-toolchains-plugin.version>
