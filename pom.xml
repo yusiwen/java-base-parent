@@ -141,6 +141,7 @@
         <whitespace.plugin>1.5.0</whitespace.plugin>
         <xml-format.plugin>4.1.0</xml-format.plugin>
         <rewrite.plugin>6.10.0</rewrite.plugin>
+        <flatten.plugin>1.7.0</flatten.plugin>
         <!-- others -->
         <bnd.version>7.1.0</bnd.version>
         <bnd.plugin>7.1.0</bnd.plugin>
@@ -710,6 +711,14 @@
                         </activeRecipes>
                     </configuration>
                 </plugin>
+                <plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>flatten-maven-plugin</artifactId>
+					<version>${flatten.plugin}</version>
+					<configuration>
+						<flattenMode>oss</flattenMode>
+					</configuration>
+				</plugin>
                 <plugin>
                     <groupId>biz.aQute.bnd</groupId>
                     <artifactId>bnd-maven-plugin</artifactId>
