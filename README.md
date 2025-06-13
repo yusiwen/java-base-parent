@@ -9,14 +9,14 @@ Parent POM for my Java porjects.
 
 ## Usage
 
-Set project's parent to `cn.yusiwen:java-base-parent`
-
 ```xml
+
 <parent>
   <groupId>cn.yusiwen</groupId>
   <artifactId>java-base-parent</artifactId>
-  <version>{LATEST_RELEASE}</version>
+  <version>[LATEST_RELEASE]</version>
 </parent>
+
 ```
 
 ## Plugins
