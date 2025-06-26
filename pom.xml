@@ -148,7 +148,7 @@
         <license.plugin>5.0.0</license.plugin>
         <license-git.version>5.0.0</license-git.version>
         <enforcer.plugin>3.5.0</enforcer.plugin>
-        <flyway-maven-plugin.version>11.9.1</flyway-maven-plugin.version>
+        <flyway-maven-plugin.version>11.10.0</flyway-maven-plugin.version>
         <htmlcompressor.plugin>2.2.0</htmlcompressor.plugin>
         <htmlcompressor.version>2.0.2</htmlcompressor.version>
         <wagon.plugin>2.0.2</wagon.plugin>
