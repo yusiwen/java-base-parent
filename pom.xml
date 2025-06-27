@@ -141,7 +141,7 @@
         <whitespace.plugin>1.5.0</whitespace.plugin>
         <xml-format.plugin>4.1.0</xml-format.plugin>
         <rewrite.plugin>6.12.0</rewrite.plugin>
-        <flatten.plugin>1.7.0</flatten.plugin>
+        <flatten.plugin>1.7.1</flatten.plugin>
         <!-- others -->
         <bnd.version>7.1.0</bnd.version>
         <bnd.plugin>7.1.0</bnd.plugin>
