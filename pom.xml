@@ -103,7 +103,7 @@
         <sb-contrib.version>7.6.12</sb-contrib.version>
         <bug-pattern.version>1.5.0</bug-pattern.version>
         <spotbugs-maven-plugin.version>4.9.3.2</spotbugs-maven-plugin.version>
-        <spotbugs.version>4.9.3</spotbugs.version>
+        <spotbugs.version>4.9.4</spotbugs.version>
         <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
         <maven-pmd-plugin.version>3.21.2</maven-pmd-plugin.version>
         <p3c-pmd.version>2.2.1.0x</p3c-pmd.version>
