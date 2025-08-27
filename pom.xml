@@ -95,7 +95,7 @@
         <maven-clean-plugin.version>3.5.0</maven-clean-plugin.version>
         <!-- checks -->
         <error-prone.version>2.41.0</error-prone.version>
-        <modernizer.plugin>3.1.0</modernizer.plugin>
+        <modernizer.plugin>3.2.0</modernizer.plugin>
         <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
         <!--checkstyle check插件 -->
         <checkstyle.version>11.0.0</checkstyle.version>
