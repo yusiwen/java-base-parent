@@ -126,7 +126,7 @@
         <maven-jxr-plugin.version>3.6.0</maven-jxr-plugin.version>
         <project-info.plugin>3.9.0</project-info.plugin>
         <taglist.plugin>3.2.1</taglist.plugin>
-        <versions.plugin>2.18.0</versions.plugin>
+        <versions.plugin>2.19.0</versions.plugin>
         <!-- build -->
         <antrun-plugin.version>3.1.0</antrun-plugin.version>
         <docker-maven-plugin.version>0.46.0</docker-maven-plugin.version>
