@@ -156,7 +156,7 @@
         <yuicompressor.plugin>1.5.1</yuicompressor.plugin>
         <yuicompressor.version>2.4.8</yuicompressor.version>
         <utility.version>1.0.0-SNAPSHOT</utility.version>
-        <lombok.version>1.18.38</lombok.version>
+        <lombok.version>1.18.40</lombok.version>
         <!-- git -->
         <git-build-hook-plugin.version>3.5.0</git-build-hook-plugin.version>
     </properties>
