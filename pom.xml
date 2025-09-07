@@ -158,7 +158,7 @@
         <utility.version>1.0.0-SNAPSHOT</utility.version>
         <lombok.version>1.18.38</lombok.version>
         <!-- git -->
-        <git-build-hook-plugin.version>3.5.0</git-build-hook-plugin.version>
+        <git-build-hook-plugin.version>3.6.0</git-build-hook-plugin.version>
     </properties>
     <dependencyManagement>
         <dependencies>
